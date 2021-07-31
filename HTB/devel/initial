@@ -1,0 +1,24 @@
+# Nmap 7.91 scan initiated Sat May 15 23:29:57 2021 as: nmap -A -p 21,80 -vvv -Pn -oN initial 10.10.10.5
+Nmap scan report for 10.10.10.5 (10.10.10.5)
+Host is up, received user-set (0.21s latency).
+Scanned at 2021-05-15 23:29:59 PKT for 19s
+
+PORT   STATE SERVICE REASON  VERSION
+21/tcp open  ftp     syn-ack Microsoft ftpd
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| 03-18-17  02:06AM       <DIR>          aspnet_client
+| 03-17-17  05:37PM                  689 iisstart.htm
+|_03-17-17  05:37PM               184946 welcome.png
+| ftp-syst: 
+|_  SYST: Windows_NT
+80/tcp open  http    syn-ack Microsoft IIS httpd 7.5
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/7.5
+|_http-title: IIS7
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat May 15 23:30:18 2021 -- 1 IP address (1 host up) scanned in 20.35 seconds

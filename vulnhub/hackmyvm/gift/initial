@@ -1,0 +1,22 @@
+# Nmap 7.91 scan initiated Mon Jul 19 09:41:31 2021 as: nmap -A -sV -p 22,80 -vvv -oN initial 192.168.1.168
+Nmap scan report for gift (192.168.1.168)
+Host is up, received syn-ack (0.00037s latency).
+Scanned at 2021-07-19 09:41:31 EDT for 6s
+
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 8.3 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 2c:1b:36:27:e5:4c:52:7b:3e:10:94:41:39:ef:b2:95 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwvhffyA9Z9cqVhVe0GuixD3HU4XTTTf1CQnN9PbBFckBHxypueBuI9N0WkAOvZLGKI9JkjxzxgQ5vIdzr83IoyrbUBw/nFLwRzsVhBM+JMUqSZ9OHMhg8qQpFIAcdNprgB40DgER+hMrU+yUAqwbNISQC/aE+DCdHNjNqFw6Pf2/+7bp8CbntJAxdh4DtHZAmneKy/2JGKzpJcDxU2L8B5pY9uvajkKVSDXVFe1bJZV9ZirBalgYGgke4sTz5kpIeT3CyEefJie6r7wloIH4CiWtyXDsYGMt5mD2UBCa4GDQaJO5U9F0qjYFa8YdVCOTWdyQvOlFOgqydvAl0LRf6tZKNqVOb/peNf9K8Ucrg4n+IevaGmivhyGXnwbuCuHN1QH/9dzbNbnZwXn2GYtwYdjBy6AmHRX9Jcsdorj4b/r+eCEPvFIm4ESc7qsn4ShtQr9R8fTgrWArJkfLKhr4KdwMZoifAbjrR/G/lj524dS20mbbVLdhjy/8rH/42dN0=
+|   256 93:c1:1e:32:24:0e:34:d9:02:0e:ff:c3:9c:59:9b:dd (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEK4YVSVfGAFEwIJqSel1n33seZLyN+AgGU4rUu5Xrf2LnzQmntddLtLtc1Soqu6SpOi/A6vefQzI+a867uJ3Tw=
+|   256 81:ab:36:ec:b1:2b:5c:d2:86:55:12:0c:51:00:27:d7 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID5tIogpq9Eky8MaFF10Cq48d+nTRmXk0OwWl8J8CNIq
+80/tcp open  http    syn-ack nginx
+| http-methods: 
+|_  Supported Methods: GET HEAD
+|_http-title: Site doesn't have a title (text/html).
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Jul 19 09:41:37 2021 -- 1 IP address (1 host up) scanned in 6.74 seconds

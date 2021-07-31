@@ -1,0 +1,83 @@
+# Nmap 7.91 scan initiated Tue May 11 21:31:16 2021 as: nmap -A -p 80,135,139,445,3389,8080 -vvv -oN initial 10.10.67.106
+Nmap scan report for 10.10.67.106 (10.10.67.106)
+Host is up, received syn-ack (0.41s latency).
+Scanned at 2021-05-11 21:31:20 PKT for 51s
+
+PORT     STATE SERVICE            REASON  VERSION
+80/tcp   open  http               syn-ack Microsoft IIS httpd 8.5
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/8.5
+|_http-title: Site doesn't have a title (text/html).
+135/tcp  open  tcpwrapped         syn-ack
+139/tcp  open  netbios-ssn        syn-ack Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds       syn-ack Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
+3389/tcp open  ssl/ms-wbt-server? syn-ack
+| ssl-cert: Subject: commonName=steelmountain
+| Issuer: commonName=steelmountain
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha1WithRSAEncryption
+| Not valid before: 2021-05-10T16:14:37
+| Not valid after:  2021-11-09T16:14:37
+| MD5:   e136 cfdc 79d5 101a 3773 aabc 9216 8027
+| SHA-1: c9c5 820c af52 8c63 75e5 6e76 e164 9c42 d649 8d3d
+| -----BEGIN CERTIFICATE-----
+| MIIC3jCCAcagAwIBAgIQTBvSbKeJo4tM35DNGNV6SjANBgkqhkiG9w0BAQUFADAY
+| MRYwFAYDVQQDEw1zdGVlbG1vdW50YWluMB4XDTIxMDUxMDE2MTQzN1oXDTIxMTEw
+| OTE2MTQzN1owGDEWMBQGA1UEAxMNc3RlZWxtb3VudGFpbjCCASIwDQYJKoZIhvcN
+| AQEBBQADggEPADCCAQoCggEBAJvNZ6Mg0XXoHkUvbbBbL7J3Y4f06q0QEop/XQZ3
+| Nawui9xWwD/j5fYYbZH9FKqDfjgc7r7Pb+yDd0AQoBqSATiLm1ZFEHS3w55svjpR
+| oX0TIFG/0lXZJHsOUgDipsJPVI2IbgVv/pAuZ76WeqHJZKd5Po8ETglmisZpA5j/
+| yqsgFozXRutgvavd127fpycC3Sgfk1InpiVOXWe96rQFzKZwP0QfjWjph1jvY9KE
+| w0LYrMoNeTZxdvjYacylrbbNXjclYES7j9Y+uZkMnblfG2/xriA4EeUJrP5gGWXM
+| iRTX187sXOdAFwf2S1dlBHRAN7q6INj3wUYA+TwqRMcf1t8CAwEAAaMkMCIwEwYD
+| VR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQwMA0GCSqGSIb3DQEBBQUAA4IB
+| AQAqA1VBf+BHf/SZkWs06+XOfZaZJ86wih46J9SpMmInB+MS18u25VqwTcJ8dA9x
+| 8XcKMeT2TjQX0nRzyvYZIc5igtZpiWF5TkaEhUT4YC3rgVyhvc0mIg7Lt/Vy2mA5
+| vMbGSYlFtbUUHZZuZt8+PIlLjjk5m4WaGceTwgsz+0Q4JsXKVGXkC8VOWGPyDW9B
+| NTpPh0PYx7y4g0Y4N5zwBo2KdvlN+p/TJzcUD0BdeGcfGXVvbGkVxoZf7DGuDPne
+| iVfelTM3jpM/vbQDKUowcb/HbDRq7kntRTa57nKVQ6dEkPKvbo33XAswJs38BNxj
+| KLOmbMrXMvB7n9FFhmdNaC6u
+|_-----END CERTIFICATE-----
+|_ssl-date: 2021-05-11T16:32:04+00:00; 0s from scanner time.
+8080/tcp open  http               syn-ack HttpFileServer httpd 2.3
+|_http-favicon: Unknown favicon MD5: 759792EDD4EF8E6BC2D1877D27153CB1
+| http-methods: 
+|_  Supported Methods: GET POST
+|_http-server-header: HFS 2.3
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 0s, deviation: 0s, median: -1s
+| nbstat: NetBIOS name: STEELMOUNTAIN, NetBIOS user: <unknown>, NetBIOS MAC: 02:78:c2:25:50:e9 (unknown)
+| Names:
+|   STEELMOUNTAIN<00>    Flags: <unique><active>
+|   WORKGROUP<00>        Flags: <group><active>
+|   STEELMOUNTAIN<20>    Flags: <unique><active>
+| Statistics:
+|   02 78 c2 25 50 e9 00 00 00 00 00 00 00 00 00 00 00
+|   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+|_  00 00 00 00 00 00 00 00 00 00 00 00 00 00
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 31638/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 7724/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 33102/udp): CLEAN (Failed to receive data)
+|   Check 4 (port 63056/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb-security-mode: 
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-05-11T16:31:47
+|_  start_date: 2021-05-11T16:14:29
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue May 11 21:32:11 2021 -- 1 IP address (1 host up) scanned in 55.87 seconds

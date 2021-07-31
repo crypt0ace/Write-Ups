@@ -1,0 +1,1 @@
+Database ../users.db was created, installation was successful.

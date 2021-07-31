@@ -1,0 +1,42 @@
+Writeups for this ctf i could find:
+
+Random Write Ups:
+https://github.com/evyatar9/Writeups/tree/master/CTFs/2021-CTF_HackTheBox/Cyber_Apocalypse_2021
+
+Pwn Write Ups by IceCreamMan/Astra:
+https://github.com/cddc12346/RandomCTFs/tree/master/HTB%20Cyber%20Apocalypse
+
+Reversing Write Ups by Ferreria/Astra:
+https://github.com/JMFerreiraa/Cyber-Apocalypse-2021-CTF-writeup
+
+Random Write Ups by Elbee/Astra:
+https://github.com/elbee-cyber/CA-HTB-CTF-scripts
+
+Write Up for Key Mission/Forensics:
+https://medium.com/@lelavalp2/htb-cyber-apocalypse-key-mission-writeup-4423190d0b0b
+
+Write Ups for Pwn Challenges:
+https://theic3.github.io/
+
+Write Ups for Pwn 1-4:
+https://seal9055.github.io/ctf-writeups/?p=controller&d=cyber_apocalypse
+
+Random Write Ups:
+1)	https://blog.cryptohack.org/cyber-apocalypse-2021
+2)	https://blog.cryptohack.org/insane-apocalypse-2021
+
+
+Random Write Ups:
+https://github.com/Class-3E/HTB-CyberApocolypse
+
+Random Write Ups:
+https://github.com/Class-3E/HTB-CyberApocolypse
+
+Write Ups for Pwn Challenges:
+https://github.com/datajerk/ctf-write-ups/tree/master/cyberapocalypsectf2021
+
+Random Wrtie Ups:
+https://github.com/0x0ff3ns1v3/CTF-WriteUps/tree/main/Cyber%20Apolcalypse%202021/Web
+
+Random Write Ups:
+https://rayhan0x01.github.io/ctf/2021/04/24/htb-cyberapocalypse-ctf-writeup.html

@@ -1,0 +1,20 @@
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times will be slower.
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-02-26 07:22 EST
+Stats: 0:01:34 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 84.64% done; ETC: 07:24 (0:00:17 remaining)
+Nmap scan report for funbox5 (192.168.43.99)
+Host is up (0.00084s latency).
+Not shown: 65533 filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 af:ae:39:e2:da:bb:6f:1a:6b:04:ec:36:29:d9:0c:ea (RSA)
+|   256 1d:d7:ef:2c:85:bf:0d:fc:e2:60:85:22:42:8d:cc:4d (ECDSA)
+|_  256 a0:a4:6d:d9:ca:3e:71:a1:31:ea:a2:7e:42:63:13:74 (ED25519)
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 113.94 seconds

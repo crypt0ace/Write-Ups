@@ -1,0 +1,87 @@
+# Nmap 7.91 scan initiated Tue Jul 20 11:55:54 2021 as: nmap -A -sV -p 53,445,135,139,80,3389,5985,49664,49667,49668,49675,49676,3269,593,9389 -vvv -oN initial 10.10.149.226
+Nmap scan report for 10.10.149.226
+Host is up, received syn-ack (0.27s latency).
+Scanned at 2021-07-20 11:55:54 EDT for 72s
+
+PORT      STATE SERVICE       REASON  VERSION
+53/tcp    open  domain        syn-ack Simple DNS Plus
+80/tcp    open  http          syn-ack Microsoft IIS httpd 10.0
+| http-methods: 
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: IIS Windows Server
+88/tcp open  kerberos-sec syn-ack Microsoft Windows Kerberos (server time: 2021-07-20 17:44:00Z)
+135/tcp   open  msrpc         syn-ack Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds? syn-ack
+593/tcp   open  ncacn_http    syn-ack Microsoft Windows RPC over HTTP 1.0
+3269/tcp  open  tcpwrapped    syn-ack
+3389/tcp  open  ms-wbt-server syn-ack Microsoft Terminal Services
+| rdp-ntlm-info: 
+|   Target_Name: THM-AD
+|   NetBIOS_Domain_Name: THM-AD
+|   NetBIOS_Computer_Name: ATTACKTIVEDIREC
+|   DNS_Domain_Name: spookysec.local
+|   DNS_Computer_Name: AttacktiveDirectory.spookysec.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2021-07-20T15:56:56+00:00
+| ssl-cert: Subject: commonName=AttacktiveDirectory.spookysec.local
+| Issuer: commonName=AttacktiveDirectory.spookysec.local
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-07-19T15:24:38
+| Not valid after:  2022-01-18T15:24:38
+| MD5:   a6b2 a5df b2d1 f936 2b1c 95f7 d6d1 684e
+| SHA-1: ca48 2372 b680 fff4 e064 2df5 f803 0b22 7bd9 a47e
+| -----BEGIN CERTIFICATE-----
+| MIIDCjCCAfKgAwIBAgIQNyjSb6JU37RJKd4v8shAJjANBgkqhkiG9w0BAQsFADAu
+| MSwwKgYDVQQDEyNBdHRhY2t0aXZlRGlyZWN0b3J5LnNwb29reXNlYy5sb2NhbDAe
+| Fw0yMTA3MTkxNTI0MzhaFw0yMjAxMTgxNTI0MzhaMC4xLDAqBgNVBAMTI0F0dGFj
+| a3RpdmVEaXJlY3Rvcnkuc3Bvb2t5c2VjLmxvY2FsMIIBIjANBgkqhkiG9w0BAQEF
+| AAOCAQ8AMIIBCgKCAQEAvF3pYhI/VsNu75VD7X8uZTWYYllDyT9FpB5BGKDn/yBT
+| 5VkPSEmg4GJRHnKNTv9pWXBwDVA5Orol27GeoCKApI4tuNknfpotoy/d9lYrBRzx
+| u4zAgLVYlj7abVqbLlpwQZwrVE+aG+HXFV16F5gUJhDSlArEQqlMS3rsVOh5Yzc/
+| BzQgReGf9J+Hcu1JagaqSX7oXeyx1AqN03QUWOtS8yeX54eWrn3TFqn4GVze93py
+| LAby+BpHn+lVxO6N4hyxTt6znFu8OTC2vQb9qKfoBF7xUw5tKagMsHYG0aj3WJXk
+| WACtfbcbHMKVjkhlR9W045CU4IUagulW0M+gt1CNLQIDAQABoyQwIjATBgNVHSUE
+| DDAKBggrBgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcNAQELBQADggEBABvc
+| aWXiwvtz0oG1t24DEsNZOUX0VWlwA7gSOuuQmeZ+fiLyZ69V2u+IsCQ72xA2o+l0
+| 25YMivB1tEm02dtUKQOFUpsrPU1F2rt1RDRwKJqQXjrc9vqHftNIYKwfXj3fjL5K
+| x8b2BzfqsIz+8G4iL+Ks8qX5eYG9G3W2Rgh8SV2OzjZz0CcXvQ64Go7aul8G02rx
+| osxMCN0F/F6sE6SXHmjdzz7xthYBiVrbVdzNz1ux6nhAlhvp/xCPRxpgoxFkonaQ
+| E8KPJJaCvbw12or5S9qvexMVyIdY3gHy6bLNfsxZuNWTjXpGzE4gLmGY7FT+MRIl
+| Pf2Pft/LOxeZafwvW/M=
+|_-----END CERTIFICATE-----
+|_ssl-date: 2021-07-20T15:57:05+00:00; +1s from scanner time.
+5985/tcp  open  http          syn-ack Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        syn-ack .NET Message Framing
+49664/tcp open  msrpc         syn-ack Microsoft Windows RPC
+49667/tcp open  msrpc         syn-ack Microsoft Windows RPC
+49668/tcp open  msrpc         syn-ack Microsoft Windows RPC
+49675/tcp open  ncacn_http    syn-ack Microsoft Windows RPC over HTTP 1.0
+49676/tcp open  msrpc         syn-ack Microsoft Windows RPC
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 0s, deviation: 0s, median: 0s
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 45069/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 63517/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 51092/udp): CLEAN (Failed to receive data)
+|   Check 4 (port 24041/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2021-07-20T15:56:56
+|_  start_date: N/A
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Jul 20 11:57:06 2021 -- 1 IP address (1 host up) scanned in 72.64 seconds

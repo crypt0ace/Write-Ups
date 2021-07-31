@@ -1,0 +1,86 @@
+# Nmap 7.91 scan initiated Wed May 12 22:52:24 2021 as: nmap -A -p 135,139,445,1433 -Pn -vvv -oN initial 10.10.10.27
+Nmap scan report for 10.10.10.27 (10.10.10.27)
+Host is up, received user-set (0.25s latency).
+Scanned at 2021-05-12 22:52:25 PKT for 75s
+
+PORT     STATE SERVICE      REASON  VERSION
+135/tcp  open  tcpwrapped   syn-ack
+139/tcp  open  tcpwrapped   syn-ack
+445/tcp  open  microsoft-ds syn-ack Windows Server 2019 Standard 17763 microsoft-ds
+1433/tcp open  ms-sql-s     syn-ack Microsoft SQL Server 2017 14.00.1000.00; RTM
+| ms-sql-ntlm-info: 
+|   Target_Name: ARCHETYPE
+|   NetBIOS_Domain_Name: ARCHETYPE
+|   NetBIOS_Computer_Name: ARCHETYPE
+|   DNS_Domain_Name: Archetype
+|   DNS_Computer_Name: Archetype
+|_  Product_Version: 10.0.17763
+| ssl-cert: Subject: commonName=SSL_Self_Signed_Fallback
+| Issuer: commonName=SSL_Self_Signed_Fallback
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-05-12T13:12:17
+| Not valid after:  2051-05-12T13:12:17
+| MD5:   ef19 14b5 455c eb78 8bb4 bfc9 a71a d57f
+| SHA-1: cc43 85d1 f8a3 f87a bac3 a91e 90bd 75bc d002 a9e9
+| -----BEGIN CERTIFICATE-----
+| MIIDADCCAeigAwIBAgIQFKwNHlOwH51FElgMJGeUpTANBgkqhkiG9w0BAQsFADA7
+| MTkwNwYDVQQDHjAAUwBTAEwAXwBTAGUAbABmAF8AUwBpAGcAbgBlAGQAXwBGAGEA
+| bABsAGIAYQBjAGswIBcNMjEwNTEyMTMxMjE3WhgPMjA1MTA1MTIxMzEyMTdaMDsx
+| OTA3BgNVBAMeMABTAFMATABfAFMAZQBsAGYAXwBTAGkAZwBuAGUAZABfAEYAYQBs
+| AGwAYgBhAGMAazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANPm1ZLQ
+| 21K+OpPa/zCG4yBjDElJMdOB4sYtbIQnoXNAsipRmFxLughYqMXjGK6ORDG2jxMU
+| 6aC/6bDBbeygeWAn66tunvX3791uPO1lFv66/+GznBfQiD3VvY0X4a6kS3ILm857
+| EmigFWCEtjHsctZG3neHN3ULOqFHNJ2rbnzUhQ3EmiG/NDpwZiJaadmqNzpANdiQ
+| /d73HPlfkPn9xf/BeXx03cw5jgm1a9/CqiVXYoZCcRqQxctzgIlq4fzqgkg6TQ9a
+| HMr8cltTbklltiPYxSvyPTHDBnCKT/5rXqZHtRR9e86hcbnbcyGvnTRhJEcLwzn8
+| x9KCt/fnaxsaQ6UCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEADuEpgWlSQN3nKqbf
+| tsM3S5Mc1cILQVU0E9o4Sn5irQWeLPo9MfysNZkBQDj6DdIF32UH0qLqqeDwrC5b
+| 8knK6eiltL5FFjfxH9b/H8GPx8z17Pwmc41ed1i/7cSFy+JV+6ufUSgUzdzyinwr
+| 7wDi8cC/sMDVKShRLAP1PkG4C/as1R5BwMT7aN7EOcXEn1FLl0Vcmkjdc+1fLrUv
+| vkz0tb60V0OkCBfpyA0J+hkfAhMN+0T8M1llp5ef+9MDFNx5XXv7uDeYFOXVfNOX
+| bRlhXkDzTfUavN/B8FA+gd0dxPXEb3A3veBq4jR1QFf7JeGPwBlW3TmWvIdU9g+7
+| wbLr5g==
+|_-----END CERTIFICATE-----
+Service Info: OS: Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 2h03m05s, deviation: 3h30m03s, median: 18m02s
+| ms-sql-info: 
+|   10.10.10.27:1433: 
+|     Version: 
+|       name: Microsoft SQL Server 2017 RTM
+|       number: 14.00.1000.00
+|       Product: Microsoft SQL Server 2017
+|       Service pack level: RTM
+|       Post-SP patches applied: false
+|_    TCP port: 1433
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 53066/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 42294/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 45578/udp): CLEAN (Failed to receive data)
+|   Check 4 (port 16911/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb-os-discovery: 
+|   OS: Windows Server 2019 Standard 17763 (Windows Server 2019 Standard 6.3)
+|   Computer name: Archetype
+|   NetBIOS computer name: ARCHETYPE\x00
+|   Workgroup: WORKGROUP\x00
+|_  System time: 2021-05-12T11:10:47-07:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-05-12T18:10:43
+|_  start_date: N/A
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed May 12 22:53:40 2021 -- 1 IP address (1 host up) scanned in 76.80 seconds

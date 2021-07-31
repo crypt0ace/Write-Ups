@@ -1,0 +1,20 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://192.168.1.190
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                b64_dict.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              txt,php,bak,html,asp,aspx
+[+] Timeout:                 10s
+===============================================================
+2021/07/25 06:11:28 Starting gobuster in directory enumeration mode
+===============================================================
+/aWRfcnNhCg==         (Status: 200) [Size: 2537]
+/cm9ib3RzLnR4dAo=     (Status: 200) [Size: 25]  
+===============================================================
+2021/07/25 06:11:33 Finished
+===============================================================

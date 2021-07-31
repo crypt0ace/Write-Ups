@@ -1,0 +1,24 @@
+# Nmap 7.91 scan initiated Sun Jul 25 05:46:56 2021 as: nmap -A -sV -p 22,80 -vvv -oN initial 192.168.1.190
+Nmap scan report for baseme (192.168.1.190)
+Host is up, received syn-ack (0.0012s latency).
+Scanned at 2021-07-25 05:46:56 EDT for 7s
+
+PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 ca:09:80:f7:3a:da:5a:b6:19:d9:5c:41:47:43:d4:10 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+qOK8FpS9Ve5n4Vc/JGRcLj5IpfEXKn2963jzjDUlYqbdLuoIAecfd53jrSp/1FX2CjMVeQaFtFygaBzFlcL94oZg1jP60UI28mPhB+BOD7UfWSRbQbs2jIYOV5La4/jIpc8Htyn0aGWBWL6ZrVooBmYR0yEmJRyUtnH9sQDtY5k0zIqXIO63P1DnukqTJbzXBd5s6JMa7VKx4gs1XF7xASb6ILNT/T5U45K9e0si1fMCzwC0KXsuIBOnbBtzOUYSxlI6+PKPz/fgrmpO86htnc8A/af3mo9Pq6Jytrn+XjSX7hFA9UOhy8in9fUx7ZWyB5rffW0p6Vjpbxc1+bcT
+|   256 d0:75:48:48:b8:26:59:37:64:3b:25:7f:20:10:f8:70 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGzI3VdkTGf3FlIf4MVNCFjaO+1FDvyQ5lzs4W0S9pNSqzzph8oBhQaMWbUUv8EpN0EM0p0w8VY4V+MWDCqE9Pc=
+|   256 91:14:f7:93:0b:06:25:cb:e0:a5:30:e8:d3:d3:37:2b (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKKWXudaqjDSze7Ec72JtitmIyqlx9OlPIrVwkVZjDMJ
+80/tcp open  http    syn-ack nginx 1.14.2
+| http-methods: 
+|_  Supported Methods: GET HEAD
+|_http-server-header: nginx/1.14.2
+|_http-title: Site doesn't have a title (text/html).
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Jul 25 05:47:03 2021 -- 1 IP address (1 host up) scanned in 6.68 seconds

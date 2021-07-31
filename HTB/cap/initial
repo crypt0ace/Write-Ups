@@ -1,0 +1,65 @@
+# Nmap 7.91 scan initiated Tue Jun  8 19:35:36 2021 as: nmap -A -sC -p 21,22,80 -vvv -oN initial 10.129.154.0
+Nmap scan report for 10.129.154.0 (10.129.154.0)
+Host is up, received syn-ack (0.39s latency).
+Scanned at 2021-06-08 19:35:37 PKT for 188s
+
+PORT   STATE SERVICE REASON  VERSION
+21/tcp open  ftp     syn-ack vsftpd 3.0.3
+22/tcp open  ssh     syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 fa:80:a9:b2:ca:3b:88:69:a4:28:9e:39:0d:27:d5:75 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2vrva1a+HtV5SnbxxtZSs+D8/EXPL2wiqOUG2ngq9zaPlF6cuLX3P2QYvGfh5bcAIVjIqNUmmc1eSHVxtbmNEQjyJdjZOP4i2IfX/RZUA18dWTfEWlNaoVDGBsc8zunvFk3nkyaynnXmlH7n3BLb1nRNyxtouW+q7VzhA6YK3ziOD6tXT7MMnDU7CfG1PfMqdU297OVP35BODg1gZawthjxMi5i5R1g3nyODudFoWaHu9GZ3D/dSQbMAxsly98L1Wr6YJ6M6xfqDurgOAl9i6TZ4zx93c/h1MO+mKH7EobPR/ZWrFGLeVFZbB6jYEflCty8W8Dwr7HOdF1gULr+Mj+BcykLlzPoEhD7YqjRBm8SHdicPP1huq+/3tN7Q/IOf68NNJDdeq6QuGKh1CKqloT/+QZzZcJRubxULUg8YLGsYUHd1umySv4cHHEXRl7vcZJst78eBqnYUtN3MweQr4ga1kQP4YZK5qUQCTPPmrKMa9NPh1sjHSdS8IwiH12V0=
+|   256 96:d8:f8:e3:e8:f7:71:36:c5:49:d5:9d:b6:a4:c9:0c (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDqG/RCH23t5Pr9sw6dCqvySMHEjxwCfMzBDypoNIMIa8iKYAe84s/X7vDbA9T/vtGDYzS+fw8I5MAGpX8deeKI=
+|   256 3f:d0:ff:91:eb:3b:f6:e1:9f:2e:8d:de:b3:de:b2:18 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPbLTiQl+6W0EOi8vS+sByUiZdBsuz0v/7zITtSuaTFH
+80/tcp open  http    syn-ack gunicorn
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Server: gunicorn
+|     Date: Tue, 08 Jun 2021 14:35:45 GMT
+|     Connection: close
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 19386
+|     <!DOCTYPE html>
+|     <html class="no-js" lang="en">
+|     <head>
+|     <meta charset="utf-8">
+|     <meta http-equiv="x-ua-compatible" content="ie=edge">
+|     <title>Security Dashboard</title>
+|     <meta name="viewport" content="width=device-width, initial-scale=1">
+|     <link rel="shortcut icon" type="image/png" href="/static/images/icon/favicon.ico">
+|     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+|     <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+|     <link rel="stylesheet" href="/static/css/themify-icons.css">
+|     <link rel="stylesheet" href="/static/css/metisMenu.css">
+|     <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+|     <link rel="stylesheet" href="/static/css/slicknav.min.css">
+|_    <!-- amchar
+|_http-server-header: gunicorn
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.91%I=7%D=6/8%Time=60BF8046%P=x86_64-pc-linux-gnu%r(GetRe
+SF:quest,5DD,"HTTP/1\.0\x20200\x20OK\r\nServer:\x20gunicorn\r\nDate:\x20Tu
+SF:e,\x2008\x20Jun\x202021\x2014:35:45\x20GMT\r\nConnection:\x20close\r\nC
+SF:ontent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x2019386
+SF:\r\n\r\n<!DOCTYPE\x20html>\n<html\x20class=\"no-js\"\x20lang=\"en\">\n\
+SF:n<head>\n\x20\x20\x20\x20<meta\x20charset=\"utf-8\">\n\x20\x20\x20\x20<
+SF:meta\x20http-equiv=\"x-ua-compatible\"\x20content=\"ie=edge\">\n\x20\x2
+SF:0\x20\x20<title>Security\x20Dashboard</title>\n\x20\x20\x20\x20<meta\x2
+SF:0name=\"viewport\"\x20content=\"width=device-width,\x20initial-scale=1\
+SF:">\n\x20\x20\x20\x20<link\x20rel=\"shortcut\x20icon\"\x20type=\"image/p
+SF:ng\"\x20href=\"/static/images/icon/favicon\.ico\">\n\x20\x20\x20\x20<li
+SF:nk\x20rel=\"stylesheet\"\x20href=\"/static/css/bootstrap\.min\.css\">\n
+SF:\x20\x20\x20\x20<link\x20rel=\"stylesheet\"\x20href=\"/static/css/font-
+SF:awesome\.min\.css\">\n\x20\x20\x20\x20<link\x20rel=\"stylesheet\"\x20hr
+SF:ef=\"/static/css/themify-icons\.css\">\n\x20\x20\x20\x20<link\x20rel=\"
+SF:stylesheet\"\x20href=\"/static/css/metisMenu\.css\">\n\x20\x20\x20\x20<
+SF:link\x20rel=\"stylesheet\"\x20href=\"/static/css/owl\.carousel\.min\.cs
+SF:s\">\n\x20\x20\x20\x20<link\x20rel=\"stylesheet\"\x20href=\"/static/css
+SF:/slicknav\.min\.css\">\n\x20\x20\x20\x20<!--\x20amchar");
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Jun  8 19:38:45 2021 -- 1 IP address (1 host up) scanned in 189.96 seconds

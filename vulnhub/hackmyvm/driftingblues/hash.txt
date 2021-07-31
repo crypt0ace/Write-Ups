@@ -1,0 +1,1 @@
+spammer.zip/creds.txt:$pkzip2$1*1*2*0*1b*f*b003611d*0*27*0*1b*b003*adcb*2d41804a5ea9a60b1769d045bfb94c71382b2e5febf63bda08a56c*$/pkzip2$:creds.txt:spammer.zip::spammer.zip

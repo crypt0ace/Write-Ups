@@ -1,0 +1,2753 @@
+{"data":[{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "MEGABANK.LOCAL-S-1-5-20",
+ "PrimaryGroupSID": null,
+ "Properties": {
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "name": "NT AUTHORITY@MEGABANK.LOCAL"
+ },
+ "Aces": [],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-10104",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "NAOKI@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=NAOKI YAMAMOTO,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575456044,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575456044,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-10103",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "SIMON@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=SIMON FARADAY,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575455998,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575455998,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-10102",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "ZACH@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=ZACH ARMSTRONG,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575455967,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575455967,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-10101",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "MELANIE@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=MELANIE PURKIS,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": 1646970472,
+  "pwdlastset": 1646977193,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575455925,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6617",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "CLAUDE@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=CLAUDE SEGAL,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575409196,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575409196,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6616",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "PER@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=PER OLSSON,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575409092,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575409084,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6615",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "ANNIKA@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=ANNIKA LARSON,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575409043,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575409043,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6614",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "ANNETTE@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=ANNETTE NILSSON,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575409015,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575409015,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6613",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "STEVE@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=STEVE RIDER,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408925,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408925,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6612",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "PAULO@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=PAULO ALCOBIA,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408886,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408886,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6611",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "CLAIRE@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=CLAIRE NORMAN,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408824,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408824,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6610",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "STEVIE@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=STEVIE GERRARD,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408793,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408793,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6609",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "ULF@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=ULF BERG,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408739,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408739,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6608",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "GUSTAVO@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=GUSTAVO PALLIEROS,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408702,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408702,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6607",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "FELICIA@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=FELICIA CARTER,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408653,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408653,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6606",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "ANGELA@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=ANGELA PERKINS,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408583,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408583,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6605",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "FRED@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=FRED CARR,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408541,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408541,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6604",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "SALLY@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=SALLY MAY,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408509,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408509,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6603",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "MARCUS@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=MARCUS STRONG,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408479,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408479,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6602",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "ABIGAIL@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=ABIGAIL JEFFERS,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408450,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408450,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-6601",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "SUNITA@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=SUNITA RAHMAN,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1575408389,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1575408389,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-1111",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "MARKO@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=MARKO NOVAK,OU=EMPLOYEES,OU=MEGABANK USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1569590234,
+  "dontreqpreauth": false,
+  "pwdneverexpires": true,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": "Marko Novak",
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": "Account created. Password set to Welcome123!",
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1569590234,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-1105",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "RYAN@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=RYAN BERTRAND,OU=CONTRACTORS,OU=MEGABANK USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 0,
+  "lastlogontimestamp": 1646976000,
+  "pwdlastset": 1646977257,
+  "dontreqpreauth": false,
+  "pwdneverexpires": true,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": "Ryan Bertrand",
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": null,
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1569581810,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-502",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "KRBTGT@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=KRBTGT,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": false,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 1569418152,
+  "dontreqpreauth": false,
+  "pwdneverexpires": false,
+  "sensitive": false,
+  "serviceprincipalnames": [
+   "kadmin/changepw"
+  ],
+  "hasspn": true,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": "Key Distribution Center Service Account",
+  "userpassword": null,
+  "admincount": true,
+  "sidhistory": [],
+  "whencreated": 1569418152,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": true
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-503",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "DEFAULTACCOUNT@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=DEFAULTACCOUNT,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": true,
+  "enabled": false,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 0,
+  "dontreqpreauth": false,
+  "pwdneverexpires": true,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": "A user account managed by the system.",
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1569418111,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-501",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-514",
+ "Properties": {
+  "name": "GUEST@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=GUEST,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": true,
+  "enabled": false,
+  "lastlogon": 0,
+  "lastlogontimestamp": -1,
+  "pwdlastset": 0,
+  "dontreqpreauth": false,
+  "pwdneverexpires": true,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": "Built-in account for guest access to the computer/domain",
+  "userpassword": null,
+  "admincount": false,
+  "sidhistory": [],
+  "whencreated": 1569418111,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": false
+},{
+ "AllowedToDelegate": [],
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-500",
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-513",
+ "Properties": {
+  "name": "ADMINISTRATOR@MEGABANK.LOCAL",
+  "domain": "MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "distinguishedname": "CN=ADMINISTRATOR,CN=USERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "trustedtoauth": false,
+  "passwordnotreqd": false,
+  "enabled": true,
+  "lastlogon": 1646968498,
+  "lastlogontimestamp": 1646968470,
+  "pwdlastset": 1646977193,
+  "dontreqpreauth": false,
+  "pwdneverexpires": true,
+  "sensitive": false,
+  "serviceprincipalnames": [],
+  "hasspn": false,
+  "displayname": null,
+  "email": null,
+  "title": null,
+  "homedirectory": null,
+  "description": "Built-in account for administering the computer/domain",
+  "userpassword": null,
+  "admincount": true,
+  "sidhistory": [],
+  "whencreated": 1569418111,
+  "unixpassword": null,
+  "unicodepassword": null,
+  "sfupassword": null
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AllExtendedRights",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "SPNTargets": [],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "IsACLProtected": true
+}],"meta":{"methods":0,"type":"users","count":28, "version":4}}

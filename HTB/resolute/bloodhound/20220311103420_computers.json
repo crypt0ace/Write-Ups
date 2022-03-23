@@ -1,0 +1,279 @@
+{"data":[{
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-1104",
+ "AllowedToAct": [],
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-515",
+ "LocalAdmins": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PSRemoteUsers": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Properties": {
+  "name": "MS02.MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "domain": "MEGABANK.LOCAL",
+  "distinguishedname": "CN=MS02,CN=COMPUTERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": false,
+  "enabled": true,
+  "trustedtoauth": false,
+  "haslaps": false,
+  "lastlogon": 1569711612,
+  "lastlogontimestamp": 1569580508,
+  "pwdlastset": 1569580435,
+  "whencreated": 1569580435,
+  "serviceprincipalnames": [
+   "RestrictedKrbHost/MS02",
+   "HOST/MS02",
+   "RestrictedKrbHost/MS02.megabank.local",
+   "HOST/MS02.megabank.local"
+  ],
+  "description": null,
+  "operatingsystem": "Windows Server 2016 Standard",
+  "sidhistory": []
+ },
+ "RemoteDesktopUsers": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "DcomUsers": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "AllowedToDelegate": [],
+ "Sessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PrivilegedSessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "RegistrySessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "Status": null,
+ "IsACLProtected": false
+},{
+ "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-1000",
+ "AllowedToAct": [],
+ "PrimaryGroupSID": "S-1-5-21-1392959593-3013219662-3596683436-516",
+ "LocalAdmins": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": [
+   {
+    "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-519",
+    "ObjectType": "Group"
+   },
+   {
+    "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-512",
+    "ObjectType": "Group"
+   },
+   {
+    "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-500",
+    "ObjectType": "User"
+   }
+  ]
+ },
+ "PSRemoteUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": [
+   {
+    "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-1103",
+    "ObjectType": "Group"
+   },
+   {
+    "ObjectIdentifier": "S-1-5-21-1392959593-3013219662-3596683436-10101",
+    "ObjectType": "User"
+   }
+  ]
+ },
+ "Properties": {
+  "name": "RESOLUTE.MEGABANK.LOCAL",
+  "domainsid": "S-1-5-21-1392959593-3013219662-3596683436",
+  "domain": "MEGABANK.LOCAL",
+  "distinguishedname": "CN=RESOLUTE,OU=DOMAIN CONTROLLERS,DC=MEGABANK,DC=LOCAL",
+  "unconstraineddelegation": true,
+  "enabled": true,
+  "trustedtoauth": false,
+  "haslaps": false,
+  "lastlogon": 1646968496,
+  "lastlogontimestamp": 1646968477,
+  "pwdlastset": 1646968462,
+  "whencreated": 1569418151,
+  "serviceprincipalnames": [
+   "Dfsr-12F9A27C-BF97-4787-9364-D31B6C55EB04/Resolute.megabank.local",
+   "ldap/Resolute.megabank.local/ForestDnsZones.megabank.local",
+   "ldap/Resolute.megabank.local/DomainDnsZones.megabank.local",
+   "DNS/Resolute.megabank.local",
+   "GC/Resolute.megabank.local/megabank.local",
+   "HOST/Resolute.megabank.local/MEGABANK",
+   "HOST/Resolute.megabank.local/megabank.local",
+   "ldap/Resolute.megabank.local/MEGABANK",
+   "ldap/Resolute.megabank.local",
+   "ldap/Resolute.megabank.local/megabank.local",
+   "RestrictedKrbHost/Resolute.megabank.local",
+   "HOST/Resolute.megabank.local",
+   "RestrictedKrbHost/RESOLUTE",
+   "HOST/RESOLUTE/MEGABANK",
+   "HOST/RESOLUTE",
+   "ldap/RESOLUTE/MEGABANK",
+   "ldap/RESOLUTE",
+   "RPC/b9024923-44e7-4b82-83d5-7e0d199af2bc._msdcs.megabank.local",
+   "E3514235-4B06-11D1-AB04-00C04FC2DCD2/b9024923-44e7-4b82-83d5-7e0d199af2bc/megabank.local",
+   "ldap/b9024923-44e7-4b82-83d5-7e0d199af2bc._msdcs.megabank.local"
+  ],
+  "description": null,
+  "operatingsystem": "Windows Server 2016 Standard",
+  "sidhistory": []
+ },
+ "RemoteDesktopUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "DcomUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "AllowedToDelegate": [],
+ "Sessions": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PrivilegedSessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "RegistrySessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-1392959593-3013219662-3596683436-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "MEGABANK.LOCAL-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "Status": null,
+ "IsACLProtected": false
+}],"meta":{"methods":0,"type":"computers","count":2, "version":4}}

@@ -1,0 +1,96 @@
+# Nmap 7.92 scan initiated Fri Mar 11 08:10:56 2022 as: nmap -p 53,88,135,139,389,445,464,593,636,3268,3269,5985,9389,47001,49664,49665,49666,49667,49671,49676,49677,49687,49911,57306 -sV -sC -sS -A -vvvv -oN allports.nmap -Pn 10.129.96.155
+Nmap scan report for 10.129.96.155
+Host is up, received user-set (0.46s latency).
+Scanned at 2022-03-11 08:10:57 PKT for 145s
+
+PORT      STATE  SERVICE      REASON          VERSION
+53/tcp    open   domain       syn-ack ttl 127 Simple DNS Plus
+88/tcp    open   kerberos-sec syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2022-03-11 03:18:08Z)
+135/tcp   open   msrpc        syn-ack ttl 127 Microsoft Windows RPC
+139/tcp   open   netbios-ssn  syn-ack ttl 127 Microsoft Windows netbios-ssn
+389/tcp   open   ldap         syn-ack ttl 127
+445/tcp   open   microsoft-ds syn-ack ttl 127 Windows Server 2016 Standard 14393 microsoft-ds (workgroup: MEGABANK)
+464/tcp   open   kpasswd5?    syn-ack ttl 127
+593/tcp   open   ncacn_http   syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+636/tcp   open   tcpwrapped   syn-ack ttl 127
+3268/tcp  open   ldap         syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
+3269/tcp  open   tcpwrapped   syn-ack ttl 127
+5985/tcp  open   http         syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+9389/tcp  open   mc-nmf       syn-ack ttl 127 .NET Message Framing
+47001/tcp open   http         syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+49664/tcp open   msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49665/tcp open   msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49666/tcp open   msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49667/tcp open   msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49671/tcp closed unknown      reset ttl 127
+49676/tcp open   ncacn_http   syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+49677/tcp open   msrpc        syn-ack ttl 127 Microsoft Windows RPC
+49687/tcp closed unknown      reset ttl 127
+49911/tcp closed unknown      reset ttl 127
+57306/tcp closed unknown      reset ttl 127
+OS fingerprint not ideal because: maxTimingRatio (2.706000e+00) is greater than 1.4
+Aggressive OS guesses: Microsoft Windows Server 2016 (92%), Microsoft Windows 10 1511 (92%), Microsoft Windows Server 2012 R2 (92%), Microsoft Windows 7 SP1 or Windows Server 2008 SP2 (89%), Microsoft Windows Windows 7 SP1 (88%), Microsoft Windows Vista Home Premium SP1, Windows 7, or Windows Server 2008 (88%), Microsoft Windows 10 1607 (88%), Microsoft Windows Vista SP1 (88%), Microsoft Windows Server 2012 Data Center (88%), Microsoft Windows 7 SP1 (88%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.92%E=4%D=3/11%OT=53%CT=49671%CU=38545%PV=Y%DS=2%DC=T%G=N%TM=622ABE52%P=x86_64-pc-linux-gnu)
+SEQ(SP=F6%GCD=1%ISR=10C%TI=I%CI=I%II=I%SS=S%TS=A)
+SEQ(SP=F8%GCD=2%ISR=10C%TI=I%CI=I%TS=A)
+SEQ(SP=101%GCD=1%ISR=109%TI=RD%CI=I%II=I%TS=U)
+OPS(O1=M505NW8ST11%O2=M505NW8ST11%O3=M505NW8NNT11%O4=M505NW8ST11%O5=M505NW8ST11%O6=M505ST11)
+WIN(W1=2000%W2=2000%W3=2000%W4=2000%W5=2000%W6=2000)
+ECN(R=Y%DF=Y%T=80%W=2000%O=M505NW8NNS%CC=Y%Q=)
+T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=N)
+T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)
+T7(R=N)
+U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+IE(R=Y%DFI=N%T=80%CD=Z)
+
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=257 (Good luck!)
+IP ID Sequence Generation: Randomized
+Service Info: Host: RESOLUTE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 2h46m59s, deviation: 4h37m09s, median: 6m58s
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: Resolute
+|   NetBIOS computer name: RESOLUTE\x00
+|   Domain name: megabank.local
+|   Forest name: megabank.local
+|   FQDN: Resolute.megabank.local
+|_  System time: 2022-03-10T19:19:26-08:00
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 33767/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 29273/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 15172/udp): CLEAN (Failed to receive data)
+|   Check 4 (port 49329/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-time: 
+|   date: 2022-03-11T03:19:27
+|_  start_date: 2022-03-11T03:14:07
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+| smb-security-mode: 
+|   account_used: <blank>
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+
+TRACEROUTE (using port 49687/tcp)
+HOP RTT       ADDRESS
+1   523.59 ms 10.10.14.1
+2   523.75 ms 10.129.96.155
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Mar 11 08:13:22 2022 -- 1 IP address (1 host up) scanned in 146.55 seconds

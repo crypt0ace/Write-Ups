@@ -123,6 +123,15 @@ dig axfr <> <>
 Try the command "cd ..." to change directory *Maybe one of the directory is hidden in ...*
 Always use the command "ls -lah" to check the files in FTP folder *Maybe one of them is hidden*
 
+## NFS Mounts:
+
+
+## Using DockerFile:
+- Use this when working with `DockerFile`
+```bash
+docker build -t log4j-shell-poc .
+```
+
 ## xfreerdp:
 xfreerdp /u:"USERNAME" /p:'PASSWORD' /v:"IP ADDRESS" +clipboard /dynamic-resolution /drive:/usr/share/windows-resources,share
 

@@ -1,0 +1,534 @@
+{"data":[{
+ "ObjectIdentifier": "S-1-5-21-3330634377-1326264276-632209373-4104",
+ "AllowedToAct": [],
+ "PrimaryGroupSID": "S-1-5-21-3330634377-1326264276-632209373-515",
+ "LocalAdmins": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PSRemoteUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Properties": {
+  "name": "THMJMP1.ZA.TRYHACKME.COM",
+  "domainsid": "S-1-5-21-3330634377-1326264276-632209373",
+  "domain": "ZA.TRYHACKME.COM",
+  "distinguishedname": "CN=THMJMP1,OU=WORKSTATIONS,DC=ZA,DC=TRYHACKME,DC=COM",
+  "unconstraineddelegation": false,
+  "enabled": true,
+  "trustedtoauth": false,
+  "haslaps": false,
+  "lastlogon": 1657758977,
+  "lastlogontimestamp": 1657565517,
+  "pwdlastset": 1654709078,
+  "whencreated": 1647429960,
+  "serviceprincipalnames": [
+   "WSMAN/THMJMP1",
+   "WSMAN/THMJMP1.za.tryhackme.com",
+   "TERMSRV/THMJMP1",
+   "TERMSRV/THMJMP1.za.tryhackme.com",
+   "RestrictedKrbHost/THMJMP1",
+   "HOST/THMJMP1",
+   "RestrictedKrbHost/THMJMP1.za.tryhackme.com",
+   "HOST/THMJMP1.za.tryhackme.com"
+  ],
+  "description": null,
+  "operatingsystem": "Windows Server 2019 Standard",
+  "sidhistory": []
+ },
+ "RemoteDesktopUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "DcomUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "AllowedToDelegate": [],
+ "Sessions": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PrivilegedSessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "RegistrySessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "Status": null,
+ "IsACLProtected": false
+},{
+ "ObjectIdentifier": "S-1-5-21-3330634377-1326264276-632209373-3135",
+ "AllowedToAct": [],
+ "PrimaryGroupSID": "S-1-5-21-3330634377-1326264276-632209373-515",
+ "LocalAdmins": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PSRemoteUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Properties": {
+  "name": "THMMDT.ZA.TRYHACKME.COM",
+  "domainsid": "S-1-5-21-3330634377-1326264276-632209373",
+  "domain": "ZA.TRYHACKME.COM",
+  "distinguishedname": "CN=THMMDT,OU=SERVERS,DC=ZA,DC=TRYHACKME,DC=COM",
+  "unconstraineddelegation": false,
+  "enabled": true,
+  "trustedtoauth": false,
+  "haslaps": false,
+  "lastlogon": 1657758977,
+  "lastlogontimestamp": 1657565525,
+  "pwdlastset": 1654709058,
+  "whencreated": 1646070634,
+  "serviceprincipalnames": [
+   "WSMAN/THMMDT",
+   "WSMAN/THMMDT.za.tryhackme.com",
+   "TERMSRV/THMMDT",
+   "TERMSRV/THMMDT.za.tryhackme.com",
+   "RestrictedKrbHost/THMMDT",
+   "HOST/THMMDT",
+   "RestrictedKrbHost/THMMDT.za.tryhackme.com",
+   "HOST/THMMDT.za.tryhackme.com"
+  ],
+  "description": null,
+  "operatingsystem": "Windows Server 2019 Standard",
+  "sidhistory": []
+ },
+ "RemoteDesktopUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "DcomUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "AllowedToDelegate": [],
+ "Sessions": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PrivilegedSessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "RegistrySessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "Status": null,
+ "IsACLProtected": false
+},{
+ "ObjectIdentifier": "S-1-5-21-3330634377-1326264276-632209373-3134",
+ "AllowedToAct": [],
+ "PrimaryGroupSID": "S-1-5-21-3330634377-1326264276-632209373-515",
+ "LocalAdmins": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PSRemoteUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Properties": {
+  "name": "THMIIS.ZA.TRYHACKME.COM",
+  "domainsid": "S-1-5-21-3330634377-1326264276-632209373",
+  "domain": "ZA.TRYHACKME.COM",
+  "distinguishedname": "CN=THMIIS,OU=SERVERS,DC=ZA,DC=TRYHACKME,DC=COM",
+  "unconstraineddelegation": false,
+  "enabled": true,
+  "trustedtoauth": false,
+  "haslaps": false,
+  "lastlogon": 1657758968,
+  "lastlogontimestamp": 1657565515,
+  "pwdlastset": 1654709026,
+  "whencreated": 1645959122,
+  "serviceprincipalnames": [
+   "WSMAN/THMIIS",
+   "WSMAN/THMIIS.za.tryhackme.com",
+   "TERMSRV/THMIIS",
+   "TERMSRV/THMIIS.za.tryhackme.com",
+   "RestrictedKrbHost/THMIIS",
+   "HOST/THMIIS",
+   "RestrictedKrbHost/THMIIS.za.tryhackme.com",
+   "HOST/THMIIS.za.tryhackme.com"
+  ],
+  "description": null,
+  "operatingsystem": "Windows Server 2019 Standard",
+  "sidhistory": []
+ },
+ "RemoteDesktopUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "DcomUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "AllowedToDelegate": [],
+ "Sessions": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PrivilegedSessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "RegistrySessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-548",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "Status": null,
+ "IsACLProtected": false
+},{
+ "ObjectIdentifier": "S-1-5-21-3330634377-1326264276-632209373-1001",
+ "AllowedToAct": [],
+ "PrimaryGroupSID": "S-1-5-21-3330634377-1326264276-632209373-516",
+ "LocalAdmins": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": [
+   {
+    "ObjectIdentifier": "S-1-5-21-3330634377-1326264276-632209373-1000",
+    "ObjectType": "User"
+   },
+   {
+    "ObjectIdentifier": "S-1-5-21-3330634377-1326264276-632209373-519",
+    "ObjectType": "Group"
+   },
+   {
+    "ObjectIdentifier": "S-1-5-21-3330634377-1326264276-632209373-512",
+    "ObjectType": "Group"
+   },
+   {
+    "ObjectIdentifier": "S-1-5-21-3330634377-1326264276-632209373-500",
+    "ObjectType": "User"
+   }
+  ]
+ },
+ "PSRemoteUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Properties": {
+  "name": "THMDC.ZA.TRYHACKME.COM",
+  "domainsid": "S-1-5-21-3330634377-1326264276-632209373",
+  "domain": "ZA.TRYHACKME.COM",
+  "distinguishedname": "CN=THMDC,OU=DOMAIN CONTROLLERS,DC=ZA,DC=TRYHACKME,DC=COM",
+  "unconstraineddelegation": true,
+  "enabled": true,
+  "trustedtoauth": false,
+  "haslaps": false,
+  "lastlogon": 1657758095,
+  "lastlogontimestamp": 1657565514,
+  "pwdlastset": 1654708963,
+  "whencreated": 1645739918,
+  "serviceprincipalnames": [
+   "TERMSRV/THMDC",
+   "TERMSRV/THMDC.za.tryhackme.com",
+   "Dfsr-12F9A27C-BF97-4787-9364-D31B6C55EB04/THMDC.za.tryhackme.com",
+   "ldap/THMDC.za.tryhackme.com/ForestDnsZones.za.tryhackme.com",
+   "ldap/THMDC.za.tryhackme.com/DomainDnsZones.za.tryhackme.com",
+   "DNS/THMDC.za.tryhackme.com",
+   "GC/THMDC.za.tryhackme.com/za.tryhackme.com",
+   "RestrictedKrbHost/THMDC.za.tryhackme.com",
+   "RestrictedKrbHost/THMDC",
+   "RPC/ed6726c4-5774-4e2d-bf70-18f2e580fcb0._msdcs.za.tryhackme.com",
+   "HOST/THMDC/ZA",
+   "HOST/THMDC.za.tryhackme.com/ZA",
+   "HOST/THMDC",
+   "HOST/THMDC.za.tryhackme.com",
+   "HOST/THMDC.za.tryhackme.com/za.tryhackme.com",
+   "E3514235-4B06-11D1-AB04-00C04FC2DCD2/ed6726c4-5774-4e2d-bf70-18f2e580fcb0/za.tryhackme.com",
+   "ldap/THMDC/ZA",
+   "ldap/ed6726c4-5774-4e2d-bf70-18f2e580fcb0._msdcs.za.tryhackme.com",
+   "ldap/THMDC.za.tryhackme.com/ZA",
+   "ldap/THMDC",
+   "ldap/THMDC.za.tryhackme.com",
+   "ldap/THMDC.za.tryhackme.com/za.tryhackme.com"
+  ],
+  "description": null,
+  "operatingsystem": "Windows Server 2019 Standard",
+  "sidhistory": []
+ },
+ "RemoteDesktopUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "DcomUsers": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "AllowedToDelegate": [],
+ "Sessions": {
+  "Collected": true,
+  "FailureReason": null,
+  "Results": []
+ },
+ "PrivilegedSessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "RegistrySessions": {
+  "Collected": false,
+  "FailureReason": null,
+  "Results": []
+ },
+ "Aces": [
+  {
+   "RightName": "Owns",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": false,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-512",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-526",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "AddKeyCredentialLink",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-527",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericAll",
+   "IsInherited": true,
+   "PrincipalSID": "S-1-5-21-3330634377-1326264276-632209373-519",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "GenericWrite",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteOwner",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  },
+  {
+   "RightName": "WriteDacl",
+   "IsInherited": true,
+   "PrincipalSID": "ZA.TRYHACKME.COM-S-1-5-32-544",
+   "PrincipalType": "Group"
+  }
+ ],
+ "HasSIDHistory": [],
+ "IsDeleted": false,
+ "Status": null,
+ "IsACLProtected": false
+}],"meta":{"methods":0,"type":"computers","count":4, "version":4}}

